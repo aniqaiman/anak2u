@@ -15,19 +15,47 @@
 
 // --------------------student------------------------------------------------
 
-    Route::get('/students', ['as'=>'students', 'uses'=>'StudentController@getStudent']);
     Route::post('/students',['as'=>'createStudent','uses'=>'StudentController@createStudent']);
+    Route::get('/students', ['as'=>'students', 'uses'=>'StudentController@getStudent']);
+
+// --------------------Student Report------------------------------------------------
+
+	Route::post('/studentreport', ['as'=>'createStudentReport', 'uses'=>'StudentController@createStudentReport']);
+	Route::get('/studentreport', ['as'=>'studentreport','uses'=>'StudentController@getStudentReport']);    
 
 // --------------------teacher------------------------------------------------
 
-    Route::get('/teachers', ['as'=>'teachers', 'uses'=>'TeacherController@getTeacher']);
     Route::post('/teachers',['as'=>'createTeacher','uses'=>'TeacherController@createTeacher']);
+    Route::get('/teachers', ['as'=>'teachers', 'uses'=>'TeacherController@getTeacher']);
 
 // --------------------classroom------------------------------------------------
 
  	Route::post('/classroom',['as'=>'createClassroom','uses'=>'ClassroomController@createClassroom']);	
 	Route::get('/classroom',['as'=>'classroom','uses'=>'ClassroomController@getClassroom']);
 
+
+// --------------------classroom Report------------------------------------------------
+
+	Route::post('/classroomreport',['as'=>'createClassroomReport','uses'=>'ClassroomController@createClassroomReport']);	
+	Route::get('/classroomreport',['as'=>'classroomreport','uses'=>'ClassroomController@getClassroomReport']);
+
+
+// --------------------Events------------------------------------------------
+
+	Route::post('/event', ['as'=>'createEvent', 'uses'=>'EventController@createEvent']);
+	Route::get('/event',['as'=>'event', 'uses'=>'EventController@getEvent']);
+
+
+// --------------------Parents------------------------------------------------
+
+	Route::post('/parent', ['as'=>'createParent', 'uses'=>'ParentController@createParent']);
+	Route::get('/parent', ['as'=>'parent', 'uses'=>'ParentController@getParent']);
+
+
+
+
+
+// --------------------Teacher------------------------------------------------	
 
 // --------------------API------------------------------------------------
 

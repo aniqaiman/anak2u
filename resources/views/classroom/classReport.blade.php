@@ -40,14 +40,14 @@
                       <div class="form-group">
                         <label for="message" class="col-sm-3 control-label">Message: </label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" name="message" id="message">
+                        <textarea class="form-control" name="message" id="message"></textarea>
                         </div>
                       </div>  
 
                       <div class="form-group">
                         <label for="report_picture" class="col-sm-3 control-label">Report Picture: </label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" name="report_picture" id="report_picture">
+                          <input type="file" class="form-control" name="report_picture" id="report_picture">
                         </div>
                       </div>                      
 
@@ -85,20 +85,20 @@
                           <tr class="info">
                             <th><input type="checkbox"></th>
                             <th class="mailbox-subject"><center><a>Report Id</a></center></th>
-                            <th class="mailbox-subject"><center><a>Class ID</a></center></th>
+                            <th class="mailbox-subject"><center><a>Class Name</a></center></th>
                             <th class="mailbox-subject"><center><a>Message</a></center></th>
-                            <th class="mailbox-subject"><center><a>Report Picture</a></center></th>
+                            <th class="col-sm-3"><center><a>Report Picture</a></center></th>
                           </tr>
                           </thead>
 
                           <tbody>
-                          @foreach($class_reports as $classreport)
+                          @foreach($classroomreports as $classreport)
                           <tr class="info">
                             <td><input type="checkbox"></td>
                             <td class="mailbox-subject"><center><a href="#">{{$classreport->report_id}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$classreport->class_id}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$classreport->message}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$classreport->report_picture}}</a></center></td>
+                            <td class="col-sm-3"><center><img src="#">{{$classreport->report_picture}}</a></center></td>
                          </tr>
                          @endforeach
                          

@@ -38,6 +38,7 @@
 
 	Route::post('/classroomreport',['as'=>'createClassroomReport','uses'=>'ClassroomController@createClassroomReport']);	
 	Route::get('/classroomreport',['as'=>'classroomreport','uses'=>'ClassroomController@getClassroomReport']);
+	Route::get('/classroomdashboard/{class_id}',['as'=>'classroomdashboard', 'uses'=>'ClassroomController@getClassroomDashboard']);
 
 
 // --------------------Events------------------------------------------------

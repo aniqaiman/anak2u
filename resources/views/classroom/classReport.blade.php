@@ -96,9 +96,9 @@
                           <tr class="info">
                             <td><input type="checkbox"></td>
                             <td class="mailbox-subject"><center><a href="#">{{$classreport->report_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$classreport->class_id}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$classreport->class->class_name}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$classreport->message}}</a></center></td>
-                            <td class="col-sm-3"><center><img src="#">{{$classreport->report_picture}}</a></center></td>
+                            <td class="col-sm-3"><center><img style="width: 50%" class="img-responsive" src="{{$classreport->report_picture}}"/></center></td>
                          </tr>
                          @endforeach
                          

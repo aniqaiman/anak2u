@@ -16,11 +16,15 @@ class ClassRoom extends Model
         'teacher_id'
     ];
 
-    public function student(){
+    public function students(){
         return $this->hasMany('App\Student', 'class_id');
     }
 
     public function classreports(){
         return $this->hasMany('App\ClassReport', 'class_id');
+    }
+
+    public function teachers(){
+        return $this->belongsTo('App\Teacher', 'teacher_id');
     }
 }

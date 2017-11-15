@@ -18,7 +18,8 @@ class Parents extends Model
         'address'
     ];
 
-    public function student(){
-        return $this->belongsTo('App\Student', 'parents_id');
+
+    public function students(){
+        return $this->hasMany('App\Student', 'student_id');
     }
 }

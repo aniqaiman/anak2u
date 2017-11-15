@@ -18,4 +18,9 @@ class StudentController extends Controller
             return response(Student::create($request->all()));
         }
     }
+
+    public function studentDashboard(Request $request, $student_id){   
+        $student = Student::where('student_id', $student_id)->first();
+        return view('student.studentdashboard', compact('student'));
+    }
 }

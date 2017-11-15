@@ -34,9 +34,9 @@
 
               <h3 class="profile-username text-center">{{$student->student_name}}</h3>
 
-              <p class="text-muted text-center">{{$student->parent->father_name}}/{{$student->parent->mother_name}}</p>
+              <p class="text-muted text-center">{{$student->parents->father_name}}/{{$student->parents->mother_name}}</p>
 
-              <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+              <a href="#" class="btn btn-primary btn-block"><b>View Details</b></a>
             </div>
             <!-- /.box-body -->
           </div>
@@ -138,19 +138,18 @@
                   <!-- timeline item -->
                   @foreach($studentreports as $report)    
                   <li>
-                    <i class="fa fa-envelope bg-blue"></i>
+                    <i class="fa fa-envelope bg-red"></i>
 
                     <div class="timeline-item">
                       <span class="time"><i class="fa fa-clock-o"></i>{{$report->created_at}}</span>
 
-                      <h3 class="timeline-header"><a href="#">{{$report->student->student_name}}</a> {{$report->type}}</h3>
+                      <h3 class="timeline-header"><a href="#">{{$report->student->student_name}}</a> (Cikgu)</h3>
 
                       <div class="timeline-body">
                         {{$report->message}}
                       </div>
                       <div class="timeline-footer">
-                        <a class="btn btn-primary btn-xs">Read more</a>
-                        <a class="btn btn-danger btn-xs">Delete</a>
+                      
                       </div>
                     </div>
                   </li>

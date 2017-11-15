@@ -35,53 +35,38 @@
 
         <li class="treeview">
           <a href="{{route('dashboard')}}">
-            <i class="fa fa-file-text"></i> <span class="text-info">Dashboard</span>
+            <i class="fa fa-tachometer"></i> <span class="text-info">Dashboard</span>
           </a>
         </li>
 
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span class="text-info">Student</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a class="text-info" href="{{route('students')}}"><i class="fa fa-level-down"></i>Student Management</a></li>
-            <li><a class="text-info" href="{{route('studentreport')}}"><i class="fa fa-level-down"></i>Student Report Management</a></li>
-          </ul>
+          <a href="{{route('students')}}">
+            <i class="fa fa-graduation-cap"></i><span class="text-info">Student Management</span>
+          </a>   
         </li>
 
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
+          <a href="{{route('classroom')}}">
+            <i class="fa fa-list"></i>
             <span class="text-info">Classroom</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a class="text-info" href="{{route('classroom')}}"><i class="fa fa-level-down"></i>Classroom Management</a></li>
-            <li><a class="text-info" href="{{route('classroomreport')}}"><i class="fa fa-level-down"></i>Classroom Report Management</a></li>
-          </ul>
         </li>  
 
         <li class="treeview">
           <a href="{{route('event')}}">
-            <i class="fa fa-file-text"></i> <span class="text-info">Event Management</span>
+            <i class="fa fa-calendar"></i> <span class="text-info">Event Management</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="{{route('parent')}}">
-            <i class="fa fa-file-text"></i> <span class="text-info">Parent Management</span>
+            <i class="fa fa-user"></i> <span class="text-info">Parent Management</span>
           </a>
         </li>
 
         <li class="treeview">
           <a href="{{route('teachers')}}">
-            <i class="fa fa-file-text"></i> <span class="text-info">Teacher Management</span>
+            <i class="fa fa-book"></i> <span class="text-info">Teacher Management</span>
           </a>
         </li> 
         

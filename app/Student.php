@@ -35,4 +35,8 @@ class Student extends Model
     public function class(){
         return $this->belongsTo('App\ClassRoom', 'class_id');
     }
+
+    public function parents(){
+        return $this->belongsTo('App\Parents', 'parents_id');
+    }
 }

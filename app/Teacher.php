@@ -15,4 +15,8 @@ class Teacher extends Model
         'email',
         'address'
     ];
+
+    public function class(){
+        return $this->hasMany('App\ClassRoom', 'teacher_id');
+    }
 }

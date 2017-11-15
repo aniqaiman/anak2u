@@ -16,4 +16,8 @@ class Parents extends Model
         'email',
         'address'
     ];
+
+    public function students(){
+        return $this->hasMany('App\Student', 'student_id');
+    }
 }

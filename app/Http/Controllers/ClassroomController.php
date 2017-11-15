@@ -64,5 +64,14 @@ class ClassroomController extends Controller
 		return view('classroom.classReport', compact('classroomreports'));
 	}    
 
+	public function getClassroomDashboard($class_id)
+	{
+		$classrooms = ClassRoom::where('class_id', $class_id)->first();
+		$students = Student::all();
+		$classroomreports = ClassReport::where('report_id', $class_id)->get();
+
+		return view('classroom.classroomDashboard', compact('classrooms', 'students', 'classroomreports'));
+	}
+
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }

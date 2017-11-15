@@ -79,7 +79,6 @@
                             <th><input type="checkbox"></th>
                             <th class="mailbox-subject"><center><a>Classroom Id</a></center></th>
                             <th class="mailbox-subject"><center><a>Classroom Name</a></center></th>
-                            <!-- <th class="mailbox-subject"><center><a>Student Name</a></center></th> -->
                             <th class="mailbox-subject"><center><a>Teacher Id</a></center></th>
                           </tr>
                           </thead>
@@ -90,7 +89,6 @@
                             <td><input type="checkbox"></td>
                             <td class="mailbox-subject"><center><a href="#">{{$classroom->class_id}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$classroom->class_name}}</a></center></td>
-                            <!-- <td class="mailbox-subject"><center><a href="#">{{$classroom->student_id}}</a></center></td> -->
                             <td class="mailbox-subject"><center><a href="#">{{$classroom->teacher_id}}</a></center></td>
                          </tr>
                          <!-- @endforeach -->

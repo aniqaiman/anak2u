@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use Session;
 use App\ClassRoom;
+use App\ClassReport;
 
 class ClassroomController extends Controller
 {
@@ -29,6 +30,30 @@ class ClassroomController extends Controller
     	$classrooms = ClassRoom::all();
     	return view('classroom.classroom', compact('classrooms'));
     }
+
+
+// --------------------------------ClassRoom Report-------------------------------------------
+
+	public function createClassroomReport(Request $request)
+	{
+		$path = $request->file('report_picture')->store('public/images');
+		if ($request->ajax()){
+			$classroomreports = new ClassReport;
+			$classroomreports->class_id=$request->class_id;
+			$classroomreports->message=$request->message;
+			$classroomreports->report_picture=$path;
+			$classroomreports->save();
+			return response($classroomreports);
+		}
+	}
+
+	public function getClassroomReport()
+	{
+		$classroomreports = ClassReport::all();
+		return view('classroom.classReport', compact('classroomreports'));
+	}    
+
+
 
      use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }

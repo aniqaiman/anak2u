@@ -43,8 +43,21 @@
           </a>
           <ul class="treeview-menu">
             <li><a class="text-info" href="{{route('classroom')}}"><i class="fa fa-level-down"></i>Classroom Management</a></li>
+            <li><a class="text-info" href="{{route('classroomreport')}}"><i class="fa fa-level-down"></i>Classroom Report Management</a></li>
           </ul>
         </li>  
+
+        <li class="treeview">
+          <a href="{{route('event')}}">
+            <i class="fa fa-file-text"></i> <span class="text-info">Event Management</span>
+          </a>
+        </li>
+
+        <li class="treeview">
+          <a href="{{route('parent')}}">
+            <i class="fa fa-file-text"></i> <span class="text-info">Parent Management</span>
+          </a>
+        </li>
         
         </ul>
     </section>

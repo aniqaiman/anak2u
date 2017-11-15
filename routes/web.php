@@ -21,6 +21,36 @@ Route::get('/', function () {
 	Route::get('/classroom',['as'=>'classroom','uses'=>'ClassroomController@getClassroom']);
 
 
+// --------------------classroom Report------------------------------------------------
+
+	Route::post('/classroomreport',['as'=>'createClassroomReport','uses'=>'ClassroomController@createClassroomReport']);	
+	Route::get('/classroomreport',['as'=>'classroomreport','uses'=>'ClassroomController@getClassroomReport']);
+
+
+// --------------------Events------------------------------------------------
+
+	Route::post('/event', ['as'=>'createEvent', 'uses'=>'EventController@createEvent']);
+	Route::get('/event',['as'=>'event', 'uses'=>'EventController@getEvent']);
+
+
+// --------------------Parents------------------------------------------------
+
+	Route::post('/parent', ['as'=>'createParent', 'uses'=>'ParentController@createParent']);
+	Route::get('/parent', ['as'=>'parent', 'uses'=>'ParentController@getParent']);
+
+
+// --------------------Student Report------------------------------------------------
+
+
+
+
+// --------------------Student------------------------------------------------
+
+
+
+
+// --------------------Teacher------------------------------------------------	
+
 // --------------------API------------------------------------------------
 
 Route::get('/api/class/{class_id}/students', 'Api\StudentController@getStudent');

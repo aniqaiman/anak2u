@@ -156,7 +156,6 @@
                       
                       <div class="table-responsive mailbox-messages">
                         <table class="table table-hover table-striped" id="student-table">
-                
                           <thead>
   
                           <tr class="info">

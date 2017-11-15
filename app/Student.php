@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\StudentReport;
 use App\ClassRoom;
+use App\Parents;
 
 class Student extends Model
 {
@@ -34,5 +35,9 @@ class Student extends Model
 
     public function class(){
         return $this->belongsTo('App\ClassRoom', 'class_id');
+    }
+
+    public function parent(){
+        return $this->belongsTo('App\Parents', 'parents_id');
     }
 }

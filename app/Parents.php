@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Student;
 
 class Parents extends Model
 {
@@ -16,4 +17,8 @@ class Parents extends Model
         'email',
         'address'
     ];
+
+    public function student(){
+        return $this->belongsTo('App\Student', 'parents_id');
+    }
 }

@@ -10,9 +10,20 @@ use Illuminate\Http\Request;
 use Redirect;
 use Session;
 use App\ClassRoom;
+use App\Event;
+use App\Student;
 
 class ClassroomController extends Controller
 {
+
+    public function getDashboard(){
+        $classrooms = ClassRoom::all();
+        $students = Student::all();
+        $events = Event::all();
+
+        return view('dashboard', compact('classrooms, students, events'));
+    }
+
     public function createClassroom(Request $request)
     {
     	if($request->ajax()){

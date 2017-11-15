@@ -11,9 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'ClassroomController@getDashboard']);
+
+// --------------------student------------------------------------------------
+
+    Route::get('/students', ['as'=>'students', 'uses'=>'StudentController@getStudent']);
+    Route::post('/students',['as'=>'createStudent','uses'=>'StudentController@createStudent']);
+
+// --------------------teacher------------------------------------------------
+
+    Route::get('/teachers', ['as'=>'teachers', 'uses'=>'TeacherController@getTeacher']);
+    Route::post('/teachers',['as'=>'createTeacher','uses'=>'TeacherController@createTeacher']);
 
 // --------------------classroom------------------------------------------------
 

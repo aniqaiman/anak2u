@@ -19,10 +19,11 @@ class ClassroomController extends Controller
 
     public function getDashboard(){
         $classrooms = ClassRoom::all();
-        $students = Student::all();
+		$students = Student::all();
+	
         $events = Event::all();
 
-        return view('dashboard', compact('classrooms, students, events'));
+        return view('dashboard', compact('classrooms', 'students', 'events'));
     }
 
     public function createClassroom(Request $request)

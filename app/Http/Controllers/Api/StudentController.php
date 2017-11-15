@@ -26,4 +26,14 @@ class StudentController extends BaseController
         $reports = StudentReport::where('student_id', $student_id)->get();
         return response()->json(['data'=>$reports, 'status'=>'ok']);
     }
+
+    public function postStudentReport(Request $request, $student_id){
+        $report = StudentReport::create([
+            'student_id' => $request->get('student_id'),
+            'message' => $request->get('message'),
+            'type' => $request->get('type')
+        ]);
+
+        return response()->json(['data'=>$report, 'status'=>'ok']);
+    }
 }

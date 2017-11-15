@@ -27,4 +27,13 @@ class ClassController extends BaseController
         return response()->json(['data'=>$reports, 'status'=>'ok']);
     }
 
+    public function postClassReport(Request $request, $class_id){
+        $classreport = ClassReport::create([
+            'message' => $request->get('message'),
+            'class_id' => $request->get('class_id'),
+            'report_picture' => $request->get('report_picture')
+        ]);
+        return response()->json(['data'=>$classreport, 'status'=>'ok']);
+    }
+
 }

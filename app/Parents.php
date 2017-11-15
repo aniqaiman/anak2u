@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Student;
 
 class Parents extends Model
 {
@@ -16,6 +17,7 @@ class Parents extends Model
         'email',
         'address'
     ];
+
 
     public function students(){
         return $this->hasMany('App\Student', 'student_id');

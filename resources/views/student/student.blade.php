@@ -156,7 +156,6 @@
                       
                       <div class="table-responsive mailbox-messages">
                         <table class="table table-hover table-striped" id="student-table">
-                
                           <thead>
   
                           <tr class="info">
@@ -183,7 +182,7 @@
                           @foreach($students as $student)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->student_id}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="{{route('studentdashboard', ['student_id' => $student->student_id])}}">{{$student->student_id}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$student->student_name}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$student->age}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$student->nickname}}</a></center></td>

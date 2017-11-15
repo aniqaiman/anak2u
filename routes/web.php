@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+    Route::get('/student/{student_id}/studentdashboard', ['as' => 'studentdashboard','uses' =>'StudentController@studentDashboard']);
     Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'ClassroomController@getDashboard']);
 
 // --------------------student------------------------------------------------
@@ -65,5 +65,7 @@ Route::get('/api/class/{class_id}/students', 'Api\StudentController@getStudent')
 Route::get('/api/teachers', 'Api\TeacherController@getTeacher');
 
 Route::get('/api/student/{student_id}/reports', 'Api\StudentController@getStudentReport');
+Route::post('/api/student/{student_id}/report', 'Api\StudentController@postStudentReport');
 
 Route::get('/api/class/{class_id}/reports', 'Api\ClassController@getClassReport');
+Route::post('/api/class/{class_id}/report', 'Api\ClassController@postClassReport');

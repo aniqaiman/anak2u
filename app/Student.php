@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\StudentReport;
 use App\ClassRoom;
+use App\Parents;
 
 class Student extends Model
 {

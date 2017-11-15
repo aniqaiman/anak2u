@@ -28,9 +28,9 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3></h3>
+              <h3>STUDENTS</h3>
 
-              <p>New Orders</p>
+              <h4>{{count($students)}} </h4>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -43,9 +43,9 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3></h3>
+              <h3>CLASS</h3>
 
-              <p>On the way delivery</p>
+              <h4>{{count($classrooms)}}</h4>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -58,9 +58,9 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3></h3>
+              <h3>REVENUES</h3>
 
-              <p>In Progress</p>
+              <h4>RM 1300</h4>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
@@ -92,7 +92,7 @@
     
      <div class="box box-info">
            <div class="box-header with-border">
-             <h3 class="box-title">Latest Orders</h3>
+             <h3 class="box-title">Upcoming Events</h3>
 
              <div class="box-tools pull-right">
                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -106,25 +106,21 @@
                 <table class="table no-margin">
                  <thead>
                  <tr>
-                   <th>Order ID</th>
-                   <th>Location</th>
-                   <th>Service</th>
-                   <th>Status</th>
+                   <th>Event Name</th>
+                   <th>Organiser</th>
+                   <th>Start Date</th>
+                   <th>End Date</th>
                  </tr>
                  </thead>
                  <tbody>
-                
-                 <tr>
-                   <td><a href="pages/examples/invoice.html"></a></td>
-                   <td></td>
-                   
-                   <td>
-                     <div class="sparkbar" data-color="#00a65a" data-height="20"></div>
-                   </td>
-                   <td><span class="label label-success"></span></td>
-                 </tr>
-               
-                 
+                 @foreach($events as $event)
+                  <tr>
+                    <td><a href="#">{{$event->event_name}}</a></td>
+                    <td><a href="#">{{$event->organiser}}</a></td>
+                    <td><a href="#">{{$event->start_date}}</a></td>
+                    <td><a href="#">{{$event->end_date}}</a></td>
+                  </tr>
+                  @endforeach
                  </tbody>
                </table> 
              </div>
@@ -132,8 +128,7 @@
            </div>
            <!-- /.box-body -->
            <div class="box-footer clearfix">
-             <a  class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a> 
-              <a class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
+             <a  class="btn btn-sm btn-info btn-flat pull-left">Add New Event</a> 
            </div>
            <!-- /.box-footer -->
          </div>

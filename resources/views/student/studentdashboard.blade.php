@@ -29,7 +29,8 @@
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+               {{ Html::image('img/baby.jpg', 'User Image',  array('class' => 'profile-user-img img-responsive img-circle')) }}
+
 
               <h3 class="profile-username text-center">{{$student->student_name}}</h3>
 
@@ -99,11 +100,10 @@
   
                               <tr class="info">
                                 <th><input type="checkbox"></th>
-                                <th class="mailbox-subject"><center><a>Student Id</a></center></th>
-                                <th class="mailbox-subject"><center><a>Student Name</a></center></th>
-                                <th class="mailbox-subject"><center><a>Age</a></center></th>
-                                <th class="mailbox-subject"><center><a>Nickname</a></center></th>
-                                <th class="mailbox-subject"><center><a>Hobby</a></center></th>
+                                <th class="mailbox-subject"><center><a>Invoice Id</a></center></th>
+                                <th class="mailbox-subject"><center><a>Due Date</a></center></th>
+                                <th class="mailbox-subject"><center><a>Payment Date</a></center></th>
+                                <th class="mailbox-subject"><center><a>Status</a></center></th>
                               </tr>
                               </thead>
 
@@ -111,11 +111,17 @@
                               
                               <tr class="info">
                                 <td><input type="checkbox"></td>
-                                <td class="mailbox-subject"><center><a href="#"></a></center></td>
-                                <td class="mailbox-subject"><center><a href="#"></a></center></td>
-                                <td class="mailbox-subject"><center><a href="#"></a></center></td>
-                                <td class="mailbox-subject"><center><a href="#"></a></center></td>
-                                <td class="mailbox-subject"><center><a href="#"></a></center></td>
+                                <td class="mailbox-subject"><center>EZ12345</center></td>
+                                <td class="mailbox-subject"><center>11/12/2017</center></td>
+                                <td class="mailbox-subject"><center>09/12/2017</center></td>
+                                <td class="mailbox-subject"><center>paid</center></td>
+                            </tr>
+                            <tr class="info">
+                                <td><input type="checkbox"></td>
+                                <td class="mailbox-subject"><center>EZ8796</center></td>
+                                <td class="mailbox-subject"><center>30/12/2017</center></td>
+                                <td class="mailbox-subject"><center>23/12/2017</center></td>
+                                <td class="mailbox-subject"><center>paid</center></td>
                             </tr>
                           </tbody>
 

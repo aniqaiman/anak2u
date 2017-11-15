@@ -31,11 +31,39 @@
                     <div class="row">
 
                       <div class="form-group">
-                        <label for="title" class="col-sm-3 control-label">Message Title: </label>
+                        <label for="event_name" class="col-sm-3 control-label">Event Name: </label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" name="title" id="title">
+                          <input type="text" class="form-control" name="event_name" id="event_name">
                         </div>
-                      </div>                      
+                      </div>
+
+                      <div class="form-group">
+                        <label for="organiser" class="col-sm-3 control-label">Organiser: </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="organiser" id="organiser">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="start_date" class="col-sm-3 control-label">Start Date: </label>
+                        <div class="col-sm-9">
+                          <input type="date" class="form-control" name="start_date" id="start_date">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="end_date" class="col-sm-3 control-label">End Date: </label>
+                        <div class="col-sm-9">
+                          <input type="date" class="form-control" name="end_date" id="end_date">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="teacher_id" class="col-sm-3 control-label">Teacher's Name: </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="teacher_id" id="teacher_id">
+                        </div>
+                      </div>                       
 
                   </div>
             </div>
@@ -71,7 +99,11 @@
                           <tr class="info">
                             <th><input type="checkbox"></th>
                             <th class="mailbox-subject"><center><a>Event Id</a></center></th>
-                            <th class="mailbox-subject"><center><a></a></center></th>
+                            <th class="mailbox-subject"><center><a>Event's Name</a></center></th>
+                            <th class="mailbox-subject"><center><a>Organiser</a></center></th>
+                            <th class="mailbox-subject"><center><a>Start Date</a></center></th>
+                            <th class="mailbox-subject"><center><a>End Date</a></center></th>
+                            <th class="mailbox-subject"><center><a>Teacher's Name</a></center></th>                           
                           </tr>
                           </thead>
 
@@ -79,8 +111,12 @@
                           @foreach($events as $event)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$event->id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$->}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$event->event_id}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$event->event_name}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$event->organiser}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$event->start_date}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$event->end_date}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$event->teacher_id}}</a></center></td>
                          </tr>
                          @endforeach
                          

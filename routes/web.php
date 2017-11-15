@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+ 	Route::post('/classroom',['as'=>'createClassroom','uses'=>'ClassroomController@createClassroom']);	
+	Route::get('/classroom',['as'=>'classroom','uses'=>'ClassroomController@getClassroom']);

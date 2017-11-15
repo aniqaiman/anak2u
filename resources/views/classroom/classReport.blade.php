@@ -6,41 +6,48 @@
 
 <section class="content-header">
       <h1>
-        Classroom
+        Classroom Report
         <small>Control panel</small>
       </h1>
 
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li class="active">Classroom</li>
+        <li class="active">Classroom Report</li>
       </ol>
     </section>
 
-      <div class="modal modal-info fade" id="add-classroom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal modal-info fade" id="add-classroomreport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Add Classroom</h4>
+            <h4 class="modal-title">Add Classroom Report</h4>
           </div>
           
           <div class="modal-body">
                   <!-- Custom Tabs (Pulled to the right) -->
-                  <form action="#" method="POST" id="frm-classroom-create" enctype ="multipart/form-data">
+                  <form action="#" method="POST" id="frm-classroomreport-create" enctype ="multipart/form-data">
                   {!! csrf_field() !!}
                     <div class="row">
 
                       <div class="form-group">
-                        <label for="class_name" class="col-sm-3 control-label">Class Name: </label>
+                        <label for="class_id" class="col-sm-3 control-label">Class Name: </label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" name="class_name" id="class_name">
+                          <input type="text" class="form-control" name="class_id" id="class_id">
                         </div>
                       </div>  
 
                       <div class="form-group">
-                        <label for="teacher_id" class="col-sm-3 control-label">Teacher's Name: </label>
+                        <label for="message" class="col-sm-3 control-label">Message: </label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" name="teacher_id" id="teacher_id">
+                          <input type="text" class="form-control" name="message" id="message">
+                        </div>
+                      </div>  
+
+                      <div class="form-group">
+                        <label for="report_picture" class="col-sm-3 control-label">Report Picture: </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="report_picture" id="report_picture">
                         </div>
                       </div>                      
 
@@ -61,7 +68,7 @@
           <ul class="nav nav-tabs ">
             <li class="active"><a href="#tab_1" data-toggle="tab">Active</a></li>
             <li class="pull-right"> 
-            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add-classroom">Add Classroom</button></li>
+            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#add-classroomreport">Add Classroom Report</button></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab_1">
@@ -71,29 +78,29 @@
                     <div class="box-body no-padding">
                       
                       <div class="table-responsive mailbox-messages">
-                        <table class="table table-hover table-striped" id="classroom-table">
+                        <table class="table table-hover table-striped" id="classroomreport-table">
                 
                           <thead>
   
                           <tr class="info">
                             <th><input type="checkbox"></th>
-                            <th class="mailbox-subject"><center><a>Classroom Id</a></center></th>
-                            <th class="mailbox-subject"><center><a>Classroom Name</a></center></th>
-                            <!-- <th class="mailbox-subject"><center><a>Student Name</a></center></th> -->
-                            <th class="mailbox-subject"><center><a>Teacher Id</a></center></th>
+                            <th class="mailbox-subject"><center><a>Report Id</a></center></th>
+                            <th class="mailbox-subject"><center><a>Class ID</a></center></th>
+                            <th class="mailbox-subject"><center><a>Message</a></center></th>
+                            <th class="mailbox-subject"><center><a>Report Picture</a></center></th>
                           </tr>
                           </thead>
 
                           <tbody>
-                          <!-- @foreach($classrooms as $classroom) -->
+                          @foreach($class_reports as $classreport)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$classroom->class_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$classroom->class_name}}</a></center></td>
-                            <!-- <td class="mailbox-subject"><center><a href="#">{{$classroom->student_id}}</a></center></td> -->
-                            <td class="mailbox-subject"><center><a href="#">{{$classroom->teacher_id}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$classreport->report_id}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$classreport->class_id}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$classreport->message}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$classreport->report_picture}}</a></center></td>
                          </tr>
-                         <!-- @endforeach -->
+                         @endforeach
                          
                           </tbody>
 
@@ -122,8 +129,8 @@
 <script>
 $(document).ready(function()
 {
-    $('#classroom-table').DataTable();
-    $('#frm-classroom-create').on('submit',function(e)
+    $('#classroomreport-table').DataTable();
+    $('#frm-classroomreport-create').on('submit',function(e)
     {
         e.preventDefault();
         console.log('pressed');
@@ -133,7 +140,7 @@ $(document).ready(function()
 
         $.ajax(
         {
-          url: "{{route('createClassroom')}}",
+          url: "{{route('createClassroomReport')}}",
           type: "POST",
           data: formData,
           async: false,

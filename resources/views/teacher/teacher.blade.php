@@ -31,11 +31,34 @@
                     <div class="row">
 
                       <div class="form-group">
-                        <label for="title" class="col-sm-3 control-label">Message Title: </label>
+                        <label for="teacher_name" class="col-sm-3 control-label">Teacher's Name: </label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" name="title" id="title">
+                          <input type="text" class="form-control" name="teacher_name" id="teacher_name">
                         </div>
-                      </div>                      
+                      </div>
+
+                      <div class="form-group">
+                        <label for="address" class="col-sm-3 control-label">Address: </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="address" id="address">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="phone_number" class="col-sm-3 control-label">Phone Number: </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="phone_number" id="phone_number">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email" class="col-sm-3 control-label">Email: </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="email" id="email">
+                        </div>
+                      </div>
+
+
 
                   </div>
             </div>
@@ -71,7 +94,10 @@
                           <tr class="info">
                             <th><input type="checkbox"></th>
                             <th class="mailbox-subject"><center><a>Teacher Id</a></center></th>
-                            <th class="mailbox-subject"><center><a></a></center></th>
+                            <th class="mailbox-subject"><center><a>Teacher's Name</a></center></th>
+                            <th class="mailbox-subject"><center><a>Address</a></center></th>
+                            <th class="mailbox-subject"><center><a>Phone Number</a></center></th>
+                            <th class="mailbox-subject"><center><a>Email</a></center></th>
                           </tr>
                           </thead>
 
@@ -80,7 +106,10 @@
                           <tr class="info">
                             <td><input type="checkbox"></td>
                             <td class="mailbox-subject"><center><a href="#">{{$teacher->id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$->}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$teacher->teacher_name}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$teacher->address}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$teacher->phone_number}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$teacher->email}}</a></center></td>
                          </tr>
                          @endforeach
                          

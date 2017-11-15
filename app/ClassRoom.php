@@ -11,7 +11,6 @@ class ClassRoom extends Model
     public $timeStamps = 'true';
     protected $fillable = [
         'class_name',
-        'student_id',
         'teacher_id'
     ];
 }

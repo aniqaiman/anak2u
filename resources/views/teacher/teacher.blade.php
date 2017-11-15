@@ -105,7 +105,7 @@
                           @foreach($teachers as $teacher)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$teacher->id}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$teacher->teacher_id}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$teacher->teacher_name}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$teacher->address}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$teacher->phone_number}}</a></center></td>

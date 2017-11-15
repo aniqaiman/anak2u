@@ -34,6 +34,18 @@
         <li class="header">MAIN NAVIGATION</li>
 
         <li class="treeview">
+          <a href="{{route('dashboard')}}">
+            <i class="fa fa-file-text"></i> <span class="text-info">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="treeview">
+          <a href="{{route('students')}}">
+            <i class="fa fa-file-text"></i> <span class="text-info">Student Management</span>
+          </a>
+        </li>
+
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span class="text-info">Classroom</span>
@@ -58,6 +70,12 @@
             <i class="fa fa-file-text"></i> <span class="text-info">Parent Management</span>
           </a>
         </li>
+
+        <li class="treeview">
+          <a href="{{route('teachers')}}">
+            <i class="fa fa-file-text"></i> <span class="text-info">Teacher Management</span>
+          </a>
+        </li> 
         
         </ul>
     </section>

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Student;
 
 class StudentReport extends Model
 {
@@ -14,4 +15,9 @@ class StudentReport extends Model
         'message',
         'type'
     ];
+
+    public function student()
+    {
+        return $this->belongsTo('App\Student', 'student_id');
+    }
 }

@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\StudentReport;
+use App\ClassRoom;
 
 class Student extends Model
 {
@@ -25,4 +27,12 @@ class Student extends Model
         'bmi',
         'blood_type'
     ];
+
+    public function studentreports(){
+        return $this->hasMany('App\StudentReport', 'student_id');
+    }
+
+    public function class(){
+        return $this->belongsTo('App\ClassRoom', 'class_id');
+    }
 }

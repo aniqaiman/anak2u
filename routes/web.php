@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// --------------------classroom------------------------------------------------
+
+ 	Route::post('/classroom',['as'=>'createClassroom','uses'=>'ClassroomController@createClassroom']);	
+	Route::get('/classroom',['as'=>'classroom','uses'=>'ClassroomController@getClassroom']);
+
 
 // --------------------API------------------------------------------------
 

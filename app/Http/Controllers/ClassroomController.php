@@ -64,5 +64,5 @@ class ClassroomController extends Controller
 		return view('classroom.classReport', compact('classroomreports'));
 	}    
 
-     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }

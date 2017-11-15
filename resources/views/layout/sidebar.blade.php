@@ -40,9 +40,17 @@
         </li>
 
         <li class="treeview">
-          <a href="{{route('students')}}">
-            <i class="fa fa-file-text"></i> <span class="text-info">Student Management</span>
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span class="text-info">Student</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a class="text-info" href="{{route('students')}}"><i class="fa fa-level-down"></i>Student Management</a></li>
+            <li><a class="text-info" href="{{route('studentreport')}}"><i class="fa fa-level-down"></i>Student Report Management</a></li>
+          </ul>
         </li>
 
         <li class="treeview">

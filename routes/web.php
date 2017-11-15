@@ -15,13 +15,18 @@
 
 // --------------------student------------------------------------------------
 
-    Route::get('/students', ['as'=>'students', 'uses'=>'StudentController@getStudent']);
     Route::post('/students',['as'=>'createStudent','uses'=>'StudentController@createStudent']);
+    Route::get('/students', ['as'=>'students', 'uses'=>'StudentController@getStudent']);
+
+// --------------------Student Report------------------------------------------------
+
+	Route::post('/studentreport', ['as'=>'createStudentReport', 'uses'=>'StudentController@createStudentReport']);
+	Route::get('/studentreport', ['as'=>'studentreport','uses'=>'StudentController@getStudentReport']);    
 
 // --------------------teacher------------------------------------------------
 
-    Route::get('/teachers', ['as'=>'teachers', 'uses'=>'TeacherController@getTeacher']);
     Route::post('/teachers',['as'=>'createTeacher','uses'=>'TeacherController@createTeacher']);
+    Route::get('/teachers', ['as'=>'teachers', 'uses'=>'TeacherController@getTeacher']);
 
 // --------------------classroom------------------------------------------------
 
@@ -46,13 +51,6 @@
 	Route::post('/parent', ['as'=>'createParent', 'uses'=>'ParentController@createParent']);
 	Route::get('/parent', ['as'=>'parent', 'uses'=>'ParentController@getParent']);
 
-
-// --------------------Student Report------------------------------------------------
-
-
-
-
-// --------------------Student------------------------------------------------
 
 
 

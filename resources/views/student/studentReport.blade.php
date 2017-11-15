@@ -92,10 +92,10 @@
                           </thead>
 
                           <tbody>
-                          @foreach($student_reports as $studentreport)
+                          @foreach($studentreports as $studentreport)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$studentreport->report_id}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$studentreport->student_report_id}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$studentreport->student_id}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$studentreport->message}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$studentreport->type}}</a></center></td>

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\ClassRoom;
 
 class ClassReport extends Model
 {
@@ -14,4 +15,8 @@ class ClassReport extends Model
         'class_id',
         'report_picture'
     ];
+
+    public function class(){
+        return $this->belongsTo('App\ClassRoom', 'class_id');
+    }
 }

@@ -23,7 +23,7 @@ class StudentController extends BaseController
     }
 
     public function getStudentReport(Request $request, $student_id){
-        $reports = StudentReport::where('student_id', $student_id)->first();
+        $reports = StudentReport::where('student_id', $student_id)->get();
         return response()->json(['data'=>$reports, 'status'=>'ok']);
     }
 }

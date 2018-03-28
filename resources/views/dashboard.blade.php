@@ -30,10 +30,10 @@
             <div class="inner">
               <h3>STUDENTS</h3>
 
-              <h4>{{count($students)}} </h4>
+              <h4>124 Students</h4>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="fa fa-graduation-cap"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -45,10 +45,10 @@
             <div class="inner">
               <h3>CLASS</h3>
 
-              <h4>{{count($classrooms)}}</h4>
+              <h4>7 Classes</h4>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="fa fa-list"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -60,10 +60,10 @@
             <div class="inner">
               <h3>REVENUES</h3>
 
-              <h4>RM 1300</h4>
+              <h4>RM 13 000</h4>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="fa fa-money"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -73,12 +73,12 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3></h3>
+              <h3>EXPENSES</h3>
 
-              <p>Delivered</p>
+              <p>RM 8 500</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="fa fa-cart-plus"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -87,12 +87,116 @@
       </div>
      <!-- /.row -->
 <div class="row">
+  <div class="col-md-6">
+             <!-- USERS LIST -->
+             <div class="box box-danger">
+               <div class="box-header with-border">
+                 <strong class="box-title" >Absent Student This Week</strong>
+
+                 <div class="box-tools pull-right">
+                   
+                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                   </button>
+                   <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                   </button>
+                 </div>
+               </div>
+               <!-- /.box-header -->
+               <div class="box-body no-padding">
+                 <ol class="clearfix">
+                   <li>
+                     <h5 href="#">Arrayan Putra</h5>
+                     <span class="users-list-date">Today</span>
+                   </li>
+                   <li>
+                     <h5 href="#">Norman Hakim</h5>
+                     <span class="users-list-date">15 Nov 2017</span>
+                   </li>
+                   <li>
+                     <h5 href="#">Mariam Jane</h5>
+                     <span class="users-list-date">12 Nov</span>
+                   </li>
+                 </ol>
+                 <!-- /.users-list -->
+               </div>
+               <!-- /.box-body -->
+               <div class="box-footer text-center">
+                 <a href="javascript:void(0)" class="uppercase">View All Users</a>
+               </div>
+               <!-- /.box-footer -->
+             </div>
+             <!--/.box -->
+           </div>
+
+        <div class="col-md-6">
+              <!-- TO DO List -->
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="ion ion-clipboard"></i>
+
+              <strong class="box-title">Teachers On Leave</strong>
+
+              <div class="box-tools pull-right">
+                <ul class="pagination pagination-sm inline">
+                  <li><a href="#">&laquo;</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+              <ul class="todo-list">
+                <li>
+                  <!-- drag handle -->
+                  <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <!-- checkbox -->
+                  <input type="checkbox" value="">
+                  <!-- todo text -->
+                  <span class="text">Cikgu Faizal</span>
+                  <!-- Emphasis label -->
+                  <small class="label label-primary"><i></i> Cuti Kawin</small>
+                  <!-- General tools such as edit or delete-->
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <input type="checkbox" value="">
+                  <span class="text">Cikgu Hidayah</span>
+                  <small class="label label-success"><i></i> Bersalin</small>
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix no-border">
+              
+            </div>
+          </div>
+           </div>
+</div>
+<div class="row">
   
   <div class="col-md-12">
     
      <div class="box box-info">
            <div class="box-header with-border">
-             <h3 class="box-title">Upcoming Events</h3>
+             <strong class="box-title">Upcoming Events</strong> 
 
              <div class="box-tools pull-right">
                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -115,10 +219,10 @@
                  <tbody>
                  @foreach($events as $event)
                   <tr>
-                    <td><a href="#">{{$event->event_name}}</a></td>
-                    <td><a href="#">{{$event->organiser}}</a></td>
-                    <td><a href="#">{{$event->start_date}}</a></td>
-                    <td><a href="#">{{$event->end_date}}</a></td>
+                    <td>{{$event->event_name}}</td>
+                    <td>{{$event->organiser}}</td>
+                    <td>{{$event->start_date}}</td>
+                    <td>{{$event->end_date}}</td>
                   </tr>
                   @endforeach
                  </tbody>
@@ -526,74 +630,7 @@
            </div>
            <!-- /.col -->
 
-           <div class="col-md-6">
-             <!-- USERS LIST -->
-             <div class="box box-danger">
-               <div class="box-header with-border">
-                 <h3 class="box-title">Latest Members</h3>
-
-                 <div class="box-tools pull-right">
-                   <span class="label label-danger">8 New Members</span>
-                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                   </button>
-                   <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                   </button>
-                 </div>
-               </div>
-               <!-- /.box-header -->
-               <div class="box-body no-padding">
-                 <ul class="users-list clearfix">
-                   <li>
-                     <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                     <a class="users-list-name" href="#">Alexander Pierce</a>
-                     <span class="users-list-date">Today</span>
-                   </li>
-                   <li>
-                     <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                     <a class="users-list-name" href="#">Norman</a>
-                     <span class="users-list-date">Yesterday</span>
-                   </li>
-                   <li>
-                     <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                     <a class="users-list-name" href="#">Jane</a>
-                     <span class="users-list-date">12 Jan</span>
-                   </li>
-                   <li>
-                     <img src="dist/img/user6-128x128.jpg" alt="User Image">
-                     <a class="users-list-name" href="#">John</a>
-                     <span class="users-list-date">12 Jan</span>
-                   </li>
-                   <li>
-                     <img src="dist/img/user2-160x160.jpg" alt="User Image">
-                     <a class="users-list-name" href="#">Alexander</a>
-                     <span class="users-list-date">13 Jan</span>
-                   </li>
-                   <li>
-                     <img src="dist/img/user5-128x128.jpg" alt="User Image">
-                     <a class="users-list-name" href="#">Sarah</a>
-                     <span class="users-list-date">14 Jan</span>
-                   </li>
-                   <li>
-                     <img src="dist/img/user4-128x128.jpg" alt="User Image">
-                     <a class="users-list-name" href="#">Nora</a>
-                     <span class="users-list-date">15 Jan</span>
-                   </li>
-                   <li>
-                     <img src="dist/img/user3-128x128.jpg" alt="User Image">
-                     <a class="users-list-name" href="#">Nadia</a>
-                     <span class="users-list-date">15 Jan</span>
-                   </li>
-                 </ul>
-                 <!-- /.users-list -->
-               </div>
-               <!-- /.box-body -->
-               <div class="box-footer text-center">
-                 <a href="javascript:void(0)" class="uppercase">View All Users</a>
-               </div>
-               <!-- /.box-footer -->
-             </div>
-             <!--/.box -->
-           </div>
+           
            <!-- /.col -->
          </div>
          <!-- /.row -->
@@ -991,117 +1028,7 @@
           </div>
           <!-- /.box (chat box) -->
 
-          <!-- TO DO List -->
-          <div class="box box-primary">
-            <div class="box-header">
-              <i class="ion ion-clipboard"></i>
-
-              <h3 class="box-title">To Do List</h3>
-
-              <div class="box-tools pull-right">
-                <ul class="pagination pagination-sm inline">
-                  <li><a href="#">&laquo;</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">&raquo;</a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
-              <ul class="todo-list">
-                <li>
-                  <!-- drag handle -->
-                  <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <!-- checkbox -->
-                  <input type="checkbox" value="">
-                  <!-- todo text -->
-                  <span class="text">Design a nice theme</span>
-                  <!-- Emphasis label -->
-                  <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                  <!-- General tools such as edit or delete-->
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Make the theme responsive</span>
-                  <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Check your messages and notifications</span>
-                  <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Let theme shine like a star</span>
-                  <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <!-- /.box-body -->
-            <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-            </div>
-          </div>
+         
           <!-- /.box -->
 
           <!-- quick email widget -->

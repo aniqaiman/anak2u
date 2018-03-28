@@ -160,21 +160,14 @@
   
                           <tr class="info">
                             <th><input type="checkbox"></th>
-                            <th class="mailbox-subject"><center><a>Student Id</a></center></th>
                             <th class="mailbox-subject"><center><a>Student Name</a></center></th>
                             <th class="mailbox-subject"><center><a>Age</a></center></th>
-                            <th class="mailbox-subject"><center><a>Nickname</a></center></th>
                             <th class="mailbox-subject"><center><a>Hobby</a></center></th>
                             <th class="mailbox-subject"><center><a>Birthday</a></center></th>
                             <th class="mailbox-subject"><center><a>Ambition</a></center></th>
-                            <th class="mailbox-subject"><center><a>Parent's ID</a></center></th>
-                            <th class="mailbox-subject"><center><a>Class ID</a></center></th>
+                            <th class="mailbox-subject"><center><a>Parents</a></center></th>
                             <th class="mailbox-subject"><center><a>MyKid Number</a></center></th>
-                            <th class="mailbox-subject"><center><a>Allergies</a></center></th>
-                            <th class="mailbox-subject"><center><a>Height</a></center></th>
-                            <th class="mailbox-subject"><center><a>Weight</a></center></th>
                             <th class="mailbox-subject"><center><a>BMI</a></center></th>
-                            <th class="mailbox-subject"><center><a>Blood Type</a></center></th>
                           </tr>
                           </thead>
 
@@ -182,21 +175,14 @@
                           @foreach($students as $student)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="{{route('studentdashboard', ['student_id' => $student->student_id])}}">{{$student->student_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->student_name}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="{{route('studentdashboard', ['student_id' => $student->student_id])}}">{{$student->student_name}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$student->age}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->nickname}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$student->hobby}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$student->birthday}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$student->ambition}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->parents_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->class_id}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="#">{{$student->parents->father_name}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$student->mykid_number}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->allergies}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->height}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->weight}}</a></center></td>
                             <td class="mailbox-subject"><center><a href="#">{{$student->bmi}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->blood_type}}</a></center></td>
                          </tr>
                          @endforeach
                          

@@ -160,14 +160,14 @@
   
                           <tr class="info">
                             <th><input type="checkbox"></th>
-                            <th class="mailbox-subject"><center><a>Student Name</a></center></th>
-                            <th class="mailbox-subject"><center><a>Age</a></center></th>
-                            <th class="mailbox-subject"><center><a>Hobby</a></center></th>
-                            <th class="mailbox-subject"><center><a>Birthday</a></center></th>
-                            <th class="mailbox-subject"><center><a>Ambition</a></center></th>
-                            <th class="mailbox-subject"><center><a>Parents</a></center></th>
-                            <th class="mailbox-subject"><center><a>MyKid Number</a></center></th>
-                            <th class="mailbox-subject"><center><a>BMI</a></center></th>
+                            <th class="mailbox-subject"><center>Student Name</center></th>
+                            <th class="mailbox-subject"><center>Age</center></th>
+                            <th class="mailbox-subject"><center>Hobby</center></th>
+                            <th class="mailbox-subject"><center>Birthday</center></th>
+                            <th class="mailbox-subject"><center>Ambition</center></th>
+                            <th class="mailbox-subject"><center>Parents</center></th>
+                            <th class="mailbox-subject"><center>MyKid Number</center></th>
+                            <th class="mailbox-subject"><center>BMI</center></th>
                           </tr>
                           </thead>
 
@@ -176,13 +176,13 @@
                           <tr class="info">
                             <td><input type="checkbox"></td>
                             <td class="mailbox-subject"><center><a href="{{route('studentdashboard', ['student_id' => $student->student_id])}}">{{$student->student_name}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->age}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->hobby}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->birthday}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->ambition}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->parents->father_name}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->mykid_number}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$student->bmi}}</a></center></td>
+                            <td class="mailbox-subject"><center>{{$student->age}}</center></td>
+                            <td class="mailbox-subject"><center>{{$student->hobby}}</center></td>
+                            <td class="mailbox-subject"><center>{{$student->birthday}}</center></td>
+                            <td class="mailbox-subject"><center>{{$student->ambition}}</center></td>
+                            <td class="mailbox-subject"><center>{{$student->parents->father_name}}</center></td>
+                            <td class="mailbox-subject"><center>{{$student->mykid_number}}</center></td>
+                            <td class="mailbox-subject"><center>{{$student->bmi}}</center></td>
                          </tr>
                          @endforeach
                          

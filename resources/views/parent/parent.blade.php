@@ -98,12 +98,12 @@
   
                           <tr class="info">
                             <th><input type="checkbox"></th>
-                            <th class="mailbox-subject"><center><a>Parent Id</a></center></th>
-                            <th class="mailbox-subject"><center><a>Father's Name</a></center></th>
-                            <th class="mailbox-subject"><center><a>Mother's Name</a></center></th>
-                            <th class="mailbox-subject"><center><a>Address</a></center></th>
-                            <th class="mailbox-subject"><center><a>Phone Number</a></center></th>
-                            <th class="mailbox-subject"><center><a>Email</a></center></th>
+                            <th class="mailbox-subject"><center>Parent Id</center></th>
+                            <th class="mailbox-subject"><center>Father's Name</center></th>
+                            <th class="mailbox-subject"><center>Mother's Name</center></th>
+                            <th class="mailbox-subject"><center>Address</center></th>
+                            <th class="mailbox-subject"><center>Phone Number</center></th>
+                            <th class="mailbox-subject"><center>Email</center></th>
                           </tr>
                           </thead>
 
@@ -111,12 +111,12 @@
                           @foreach($parents as $parent)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$parent->parents_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$parent->father_name}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$parent->mother_name}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$parent->address}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$parent->phone_number}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$parent->email}}</a></center></td>
+                            <td class="mailbox-subject"><center>{{$parent->parents_id}}</center></td>
+                            <td class="mailbox-subject"><center>{{$parent->father_name}}</center></td>
+                            <td class="mailbox-subject"><center>{{$parent->mother_name}}</center></td>
+                            <td class="mailbox-subject"><center>{{$parent->address}}</center></td>
+                            <td class="mailbox-subject"><center>{{$parent->phone_number}}</center></td>
+                            <td class="mailbox-subject"><center>{{$parent->email}}</center></td>
                          </tr>
                          @endforeach
                          

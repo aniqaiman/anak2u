@@ -93,11 +93,11 @@
   
                           <tr class="info">
                             <th><input type="checkbox"></th>
-                            <th class="mailbox-subject"><center><a>Teacher Id</a></center></th>
-                            <th class="mailbox-subject"><center><a>Teacher's Name</a></center></th>
-                            <th class="mailbox-subject"><center><a>Address</a></center></th>
-                            <th class="mailbox-subject"><center><a>Phone Number</a></center></th>
-                            <th class="mailbox-subject"><center><a>Email</a></center></th>
+                            <th class="mailbox-subject"><center>Teacher Id</center></th>
+                            <th class="mailbox-subject"><center>Teacher's Name</center></th>
+                            <th class="mailbox-subject"><center>Address</center></th>
+                            <th class="mailbox-subject"><center>Phone Number</center></th>
+                            <th class="mailbox-subject"><center>Email</center></th>
                           </tr>
                           </thead>
 
@@ -105,11 +105,11 @@
                           @foreach($teachers as $teacher)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$teacher->teacher_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$teacher->teacher_name}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$teacher->address}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$teacher->phone_number}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$teacher->email}}</a></center></td>
+                            <td class="mailbox-subject"><center>{{$teacher->teacher_id}}</center></td>
+                            <td class="mailbox-subject"><center>{{$teacher->teacher_name}}</center></td>
+                            <td class="mailbox-subject"><center>{{$teacher->address}}</center></td>
+                            <td class="mailbox-subject"><center>{{$teacher->phone_number}}</center></td>
+                            <td class="mailbox-subject"><center>{{$teacher->email}}</center></td>
                          </tr>
                          @endforeach
                          

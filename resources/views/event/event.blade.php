@@ -98,12 +98,12 @@
   
                           <tr class="info">
                             <th><input type="checkbox"></th>
-                            <th class="mailbox-subject"><center><a>Event Id</a></center></th>
-                            <th class="mailbox-subject"><center><a>Event's Name</a></center></th>
-                            <th class="mailbox-subject"><center><a>Organiser</a></center></th>
-                            <th class="mailbox-subject"><center><a>Start Date</a></center></th>
-                            <th class="mailbox-subject"><center><a>End Date</a></center></th>
-                            <th class="mailbox-subject"><center><a>Teacher's Name</a></center></th>                           
+                            <th class="mailbox-subject"><center>Event Id</center></th>
+                            <th class="mailbox-subject"><center>Event's Name</center></th>
+                            <th class="mailbox-subject"><center>Organiser</center></th>
+                            <th class="mailbox-subject"><center>Start Date</center></th>
+                            <th class="mailbox-subject"><center>End Date</center></th>
+                            <th class="mailbox-subject"><center>Teacher's Name</center></th>                           
                           </tr>
                           </thead>
 
@@ -111,12 +111,12 @@
                           @foreach($events as $event)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$event->event_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$event->event_name}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$event->organiser}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$event->start_date}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$event->end_date}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$event->teacher_id}}</a></center></td>
+                            <td class="mailbox-subject"><center>{{$event->event_id}}</center></td>
+                            <td class="mailbox-subject"><center>{{$event->event_name}}</center></td>
+                            <td class="mailbox-subject"><center>{{$event->organiser}}</center></td>
+                            <td class="mailbox-subject"><center>{{$event->start_date}}</center></td>
+                            <td class="mailbox-subject"><center>{{$event->end_date}}</center></td>
+                            <td class="mailbox-subject"><center>{{$event->teacher_id}}</center></td>
                          </tr>
                          @endforeach
                          

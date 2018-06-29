@@ -77,9 +77,9 @@
   
                           <tr class="info">
                             <th><input type="checkbox"></th>
-                            <th class="mailbox-subject"><center><a>Classroom Id</a></center></th>
-                            <th class="mailbox-subject"><center><a>Classroom Name</a></center></th>
-                            <th class="mailbox-subject"><center><a>Teacher Name</a></center></th>
+                            <th class="mailbox-subject"><center>Classroom Id</center></th>
+                            <th class="mailbox-subject"><center>Classroom Name</center></th>
+                            <th class="mailbox-subject"><center>Teacher Name</center></th>
                           </tr>
                           </thead>
 
@@ -87,9 +87,9 @@
                           @foreach($classrooms as $classroom)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$classroom->class_id}}</a></center></td>
+                            <td class="mailbox-subject"><center>{{$classroom->class_id}}</center></td>
                             <td class="mailbox-subject"><center><a href="{{route('classroomdashboard',['class_id' => $classroom->class_id])}}">{{$classroom->class_name}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$classroom->teachers->teacher_name}}</a></center></td>
+                            <td class="mailbox-subject"><center>{{$classroom->teachers->teacher_name}}</center></td>
                          </tr>
                          @endforeach
                          

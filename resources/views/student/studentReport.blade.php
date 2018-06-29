@@ -84,10 +84,10 @@
   
                           <tr class="info">
                             <th><input type="checkbox"></th>
-                            <th class="mailbox-subject"><center><a>Report Id</a></center></th>
-                            <th class="mailbox-subject"><center><a>Student Name</a></center></th>
-                            <th class="mailbox-subject"><center><a>Message</a></center></th>
-                            <th class="mailbox-subject"><center><a>Type</a></center></th>
+                            <th class="mailbox-subject"><center>Report Id</center></th>
+                            <th class="mailbox-subject"><center>Student Name</center></th>
+                            <th class="mailbox-subject"><center>Message</center></th>
+                            <th class="mailbox-subject"><center>Type</center></th>
                           </tr>
                           </thead>
 
@@ -95,10 +95,10 @@
                           @foreach($studentreports as $studentreport)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$studentreport->student_report_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$studentreport->student_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$studentreport->message}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$studentreport->type}}</a></center></td>
+                            <td class="mailbox-subject"><center>{{$studentreport->student_report_id}}</center></td>
+                            <td class="mailbox-subject"><center>{{$studentreport->student_id}}</center></td>
+                            <td class="mailbox-subject"><center>{{$studentreport->message}}</center></td>
+                            <td class="mailbox-subject"><center>{{$studentreport->type}}</center></td>
                          </tr>
                          @endforeach
                          

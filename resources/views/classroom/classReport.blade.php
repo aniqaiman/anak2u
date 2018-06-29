@@ -84,10 +84,10 @@
   
                           <tr class="info">
                             <th><input type="checkbox"></th>
-                            <th class="mailbox-subject"><center><a>Report Id</a></center></th>
-                            <th class="mailbox-subject"><center><a>Class Name</a></center></th>
-                            <th class="mailbox-subject"><center><a>Message</a></center></th>
-                            <th class="col-sm-3"><center><a>Report Picture</a></center></th>
+                            <th class="mailbox-subject"><center>Report Id</center></th>
+                            <th class="mailbox-subject"><center>Class Name</center></th>
+                            <th class="mailbox-subject"><center>Message</center></th>
+                            <th class="col-sm-3"><center>Report Picture</center></th>
                           </tr>
                           </thead>
 
@@ -95,9 +95,9 @@
                           @foreach($classroomreports as $classreport)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$classreport->report_id}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$classreport->class->class_name}}</a></center></td>
-                            <td class="mailbox-subject"><center><a href="#">{{$classreport->message}}</a></center></td>
+                            <td class="mailbox-subject"><center>{{$classreport->report_id}}</center></td>
+                            <td class="mailbox-subject"><center>{{$classreport->class->class_name}}</center></td>
+                            <td class="mailbox-subject"><center>{{$classreport->message}}</center></td>
                             <td class="col-sm-3"><center><img style="width: 50%" class="img-responsive" src="{{$classreport->report_picture}}"/></center></td>
                          </tr>
                          @endforeach

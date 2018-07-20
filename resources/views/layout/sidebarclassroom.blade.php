@@ -10,7 +10,7 @@
           {{ HTML::image('img/kinder.jpg', 'User Image',  array('class' => 'img-circle')) }}
         </div>
         <div class="pull-left info">
-          <p>Admin Sidebar</p>
+          <p>Admin SidebarClassroom</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -37,18 +37,29 @@
           <a href="{{route('dashboard')}}">
             <i class="fa fa-tachometer"></i> <span class="text-info">Dashboard</span>
           </a>
+        </li>       
+
+        <li class="treeview">
+          <a href="{{route('students',['class_id'=>$classrooms->class_id])}}">
+            <i class="fa fa-graduation-cap"></i><span class="text-info">Student Management</span>
+          </a>   
         </li>
 
         <li class="treeview">
-          <a href="{{route('institute')}}">
-            <i class="fa fa-building"></i>
-            <span class="text-info">Institute Management</span>
+          <a href="{{route('event',['class_id'=>$classrooms->class_id])}}">
+            <i class="fa fa-calendar"></i> <span class="text-info">Event Management</span>
           </a>
-        </li>  
+        </li>
 
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users"></i> <span class="text-info">User Management</span>
+          <a href="{{route('parent',['class_id'=>$classrooms->class_id])}}">
+            <i class="fa fa-user"></i> <span class="text-info">Parent Management</span>
+          </a>
+        </li>
+
+        <li class="treeview">
+          <a href="{{route('teachers',['class_id'=>$classrooms->class_id])}}">
+            <i class="fa fa-book"></i> <span class="text-info">Teacher Management</span>
           </a>
         </li> 
         

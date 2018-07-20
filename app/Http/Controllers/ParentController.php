@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use Session;
 use App\Parents;
+use App\Classroom;
 
 class ParentController extends Controller
 {
@@ -22,15 +23,17 @@ class ParentController extends Controller
     		$parents->address=$request->address;
     		$parents->phone_number=$request->phone_number;
     		$parents->email=$request->email;
+            $parents->class_id=$request->class_id;
     		$parents->save();
     		return response($parents);    	
     	}
     }
 
-    public function getParent()
+    public function getParent($class_id, Request $request)
     {
-    	$parents = Parents::all();
-    	return view('parent.parent', compact('parents'));
+        $classrooms = Classroom::where('class_id', $class_id)->first();
+        $parents = Parents::where('class_id', $class_id)->get();
+    	return view('parent.parent', compact('classrooms','parents'));
     }
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;

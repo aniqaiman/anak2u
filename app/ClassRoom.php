@@ -13,7 +13,8 @@ class ClassRoom extends Model
     public $timeStamps = 'true';
     protected $fillable = [
         'class_name',
-        'teacher_id'
+        'teacher_id',
+        'institute_id',
     ];
 
     public function students(){
@@ -26,5 +27,10 @@ class ClassRoom extends Model
 
     public function teachers(){
         return $this->belongsTo('App\Teacher', 'teacher_id');
+    }
+
+    public function institute()
+    {
+        return $this->belongsTo('App\Institute','institute_id');
     }
 }

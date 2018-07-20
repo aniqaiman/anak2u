@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use Session;
 use App\Event;
+use App\Classroom;
 
 class EventController extends Controller
 {
@@ -22,14 +23,17 @@ class EventController extends Controller
     		$events->start_date=$request->start_date;
     		$events->end_date=$request->end_date;
     		$events->teacher_id=$request->teacher_id;
+            $events->class_id=$request->class_id;
     		$events->save();
-    		return response($events);    	}
+    		return response($events);    	
+        }
     }
 
-    public function getEvent()
+    public function getEvent($class_id, Request $request)
     {
-    	$events = Event::all();
-    	return view('event.event', compact('events'));
+        $classrooms = Classroom::where('class_id', $class_id)->first();
+    	$events = Event::where('class_id', $class_id)->get();
+    	return view('event.event', compact('events','classrooms'));
     }
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;

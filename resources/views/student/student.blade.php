@@ -1,12 +1,12 @@
-@extends('layout.master')
+@extends('layout.masterclassroom')
 @section('style')
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 @endsection
 @section('content')
 
 <section class="content-header">
-      <h1>
-        Student
+      <h1><b>
+        Student Management</b>
         <small>Control panel</small>
       </h1>
 
@@ -128,6 +128,9 @@
                         </div>
                       </div>
 
+                      <div>
+              <input type="hidden" name="class_id" value="{{$classrooms->class_id}}">
+            </div>
                   </div>
             </div>
           <div class="modal-footer">
@@ -167,7 +170,7 @@
                             <th class="mailbox-subject"><center>Ambition</center></th>
                             <th class="mailbox-subject"><center>Parents</center></th>
                             <th class="mailbox-subject"><center>MyKid Number</center></th>
-                            <th class="mailbox-subject"><center>BMI</center></th>
+                            <th class="mailbox-subject"><center>Class</center></th>
                           </tr>
                           </thead>
 
@@ -175,14 +178,14 @@
                           @foreach($students as $student)
                           <tr class="info">
                             <td><input type="checkbox"></td>
-                            <td class="mailbox-subject"><center><a href="{{route('studentdashboard', ['student_id' => $student->student_id])}}">{{$student->student_name}}</a></center></td>
+                            <td class="mailbox-subject"><center><a href="{{route('studentdashboard', ['class_id' => $classrooms->class_id,'student_id' => $student->student_id])}}">{{$student->student_name}}</a></center></td>
                             <td class="mailbox-subject"><center>{{$student->age}}</center></td>
                             <td class="mailbox-subject"><center>{{$student->hobby}}</center></td>
                             <td class="mailbox-subject"><center>{{$student->birthday}}</center></td>
                             <td class="mailbox-subject"><center>{{$student->ambition}}</center></td>
                             <td class="mailbox-subject"><center>{{$student->parents->father_name}}</center></td>
                             <td class="mailbox-subject"><center>{{$student->mykid_number}}</center></td>
-                            <td class="mailbox-subject"><center>{{$student->bmi}}</center></td>
+                            <td class="mailbox-subject"><center>{{$student->class_id}}</center></td>
                          </tr>
                          @endforeach
                          

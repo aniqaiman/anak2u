@@ -10,62 +10,54 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-    Route::get('/student/{student_id}/studentdashboard', ['as' => 'studentdashboard','uses' =>'StudentController@studentDashboard']);
-    Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'ClassroomController@getDashboard']);
+Route::get('/student/{student_id}/studentdashboard', ['as' => 'studentdashboard','uses' =>'StudentController@studentDashboard']);
+Route::get('/classroomdashboard', ['as'=>'dashboard', 'uses'=>'ClassroomController@getDashboard']);
+Route::get('/institutes/{institute_id}/institutedashboard', ['as'=>'institutedashboard', 'uses'=>'DashboardController@getDashboard']);
 
-// --------------------student------------------------------------------------
+// --------------------Institute------------------------------------------------	
 
-    Route::post('/students',['as'=>'createStudent','uses'=>'StudentController@createStudent']);
-    Route::get('/students', ['as'=>'students', 'uses'=>'StudentController@getStudent']);
-
-// --------------------Student Report------------------------------------------------
-
-	Route::post('/studentreport', ['as'=>'createStudentReport', 'uses'=>'StudentController@createStudentReport']);
-	Route::get('/studentreport', ['as'=>'studentreport','uses'=>'StudentController@getStudentReport']);    
-
-// --------------------teacher------------------------------------------------
-
-    Route::post('/teachers',['as'=>'createTeacher','uses'=>'TeacherController@createTeacher']);
-    Route::get('/teachers', ['as'=>'teachers', 'uses'=>'TeacherController@getTeacher']);
+Route::post('/institute', ['as'=>'createInstitute', 'uses'=>'InstituteController@createInstitute']);
+Route::get('/institute', ['as'=>'institute', 'uses'=>'InstituteController@getInstitute']);
+Route::get('editInstitute/{institute_id}', ['as'=>'editInstitute','uses'=>'InstituteController@editInstitute']);
+Route::post('updateInstitute',['as'=>'updateInstitute','uses'=>'InstituteController@updateInstitute']);
+Route::delete('/institute/{institute_id}',['as'=>'deleteInstitute','uses'=>'InstituteController@deleteInstitute']);
 
 // --------------------classroom------------------------------------------------
 
- 	Route::post('/classroom',['as'=>'createClassroom','uses'=>'ClassroomController@createClassroom']);	
-	Route::get('/classroom',['as'=>'classroom','uses'=>'ClassroomController@getClassroom']);
+Route::post('/classroom',['as'=>'createClassroom','uses'=>'ClassroomController@createClassroom']);	
+Route::get('/institute/{institute_id}/classroom',['as'=>'classroom','uses'=>'ClassroomController@getClassroom']);
 
+// --------------------teacher------------------------------------------------
 
-// --------------------classroom Report------------------------------------------------
+Route::post('/teachers',['as'=>'createTeacher','uses'=>'TeacherController@createTeacher']);
+Route::get('/classroom/{class_id}/teachers', ['as'=>'teachers', 'uses'=>'TeacherController@getTeacher']);
 
-	Route::post('/classroomreport',['as'=>'createClassroomReport','uses'=>'ClassroomController@createClassroomReport']);	
-	Route::get('/classroomreport',['as'=>'classroomreport','uses'=>'ClassroomController@getClassroomReport']);
-	Route::get('/classroomdashboard/{class_id}',['as'=>'classroomdashboard', 'uses'=>'ClassroomController@getClassroomDashboard']);
+// --------------------Student------------------------------------------------
 
-
-// --------------------Events------------------------------------------------
-
-	Route::post('/event', ['as'=>'createEvent', 'uses'=>'EventController@createEvent']);
-	Route::get('/event',['as'=>'event', 'uses'=>'EventController@getEvent']);
-
+Route::post('/students',['as'=>'createStudent','uses'=>'StudentController@createStudent']);
+Route::get('/classroom/{class_id}/students', ['as'=>'students', 'uses'=>'StudentController@getStudent']);
 
 // --------------------Parents------------------------------------------------
 
-	Route::post('/parent', ['as'=>'createParent', 'uses'=>'ParentController@createParent']);
-	Route::get('/parent', ['as'=>'parent', 'uses'=>'ParentController@getParent']);
+Route::post('/parent', ['as'=>'createParent', 'uses'=>'ParentController@createParent']);
+Route::get('/classroom/{class_id}/parent', ['as'=>'parent', 'uses'=>'ParentController@getParent']);
+
+// --------------------Events------------------------------------------------
+
+Route::post('/event', ['as'=>'createEvent', 'uses'=>'EventController@createEvent']);
+Route::get('/classroom/{class_id}/event',['as'=>'event', 'uses'=>'EventController@getEvent']);
+
+// --------------------Student Report------------------------------------------------
+
+Route::post('/studentreport', ['as'=>'createStudentReport', 'uses'=>'StudentController@createStudentReport']);
+Route::get('/studentreport', ['as'=>'studentreport','uses'=>'StudentController@getStudentReport']);    
+
+// --------------------classroom Report------------------------------------------------
+
+Route::post('/classroomreport',['as'=>'createClassroomReport','uses'=>'ClassroomController@createClassroomReport']);	
+Route::get('/classroomreport',['as'=>'classroomreport','uses'=>'ClassroomController@getClassroomReport']);
+Route::get('/classroomdashboard/{class_id}',['as'=>'classroomdashboard', 'uses'=>'ClassroomController@getClassroomDashboard']);
 
 
 
 
-
-// --------------------Teacher------------------------------------------------	
-
-// --------------------API------------------------------------------------
-
-Route::get('/api/class/{class_id}/students', 'Api\StudentController@getStudent');
-
-Route::get('/api/teachers', 'Api\TeacherController@getTeacher');
-
-Route::get('/api/student/{student_id}/reports', 'Api\StudentController@getStudentReport');
-Route::post('/api/student/{student_id}/report', 'Api\StudentController@postStudentReport');
-
-Route::get('/api/class/{class_id}/reports', 'Api\ClassController@getClassReport');
-Route::post('/api/class/{class_id}/report', 'Api\ClassController@postClassReport');

@@ -32,9 +32,9 @@
                {{ Html::image('img/baby.jpg', 'User Image',  array('class' => 'profile-user-img img-responsive img-circle')) }}
 
 
-              <h3 class="profile-username text-center">{{$student->student_name}}</h3>
+              <h3 class="profile-username text-center"></h3>
 
-              <p class="text-muted text-center">{{$student->parents->father_name}}/{{$student->parents->mother_name}}</p>
+              <p class="text-muted text-center"></p>
 
               <a href="#" class="btn btn-primary btn-block"><b>View Details</b></a>
             </div>
@@ -51,31 +51,31 @@
             <div class="box-body">
 
               <strong><i class="fa fa-book margin-r-5"></i>  Full Name</strong>
-              <p class="text-muted">{{$student->student_name}}</p>
+              <p class="text-muted"></p>
               <hr>
 
               <strong><i class="fa fa-map-marker margin-r-5"></i> Ambition</strong>
-              <p class="text-muted">{{$student->ambition}}</p>
+              <p class="text-muted"></p>
               <hr>
 
               <strong><i class="fa fa-pencil margin-r-5"></i> Hobby</strong>
-              <p class="text-muted">{{$student->hobby}}</p>
+              <p class="text-muted"></p>
               <hr>
 
               <strong><i class="fa fa-file-text-o margin-r-5"></i> Birthday</strong>
-              <p class="text-muted">{{$student->birthday}}</p>
+              <p class="text-muted"></p>
               <hr>
 
               <strong><i class="fa fa-pencil margin-r-5"></i> Nickname</strong>
-              <p class="text-muted">{{$student->nickname}}</p>
+              <p class="text-muted"></p>
               <hr>
 
               <strong><i class="fa fa-pencil margin-r-5"></i> Allergies</strong>
-              <p class="text-muted">{{$student->allergies}}</p>
+              <p class="text-muted"></p>
               <hr>
 
               <strong><i class="fa fa-pencil margin-r-5"></i> BMI</strong>
-              <p class="text-muted">{{$student->bmi}}</p>
+              <p class="text-muted"></p>
             
             </div>
             <!-- /.box-body -->
@@ -136,24 +136,24 @@
                 <!-- The timeline -->
                 <ul class="timeline timeline-inverse">
                   <!-- timeline item -->
-                  @foreach($studentreports as $report)    
+                      
                   <li>
                     <i class="fa fa-envelope bg-red"></i>
 
                     <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i>{{$report->created_at}}</span>
+                      <span class="time"><i class="fa fa-clock-o"></i></span>
 
-                      <h3 class="timeline-header"><a href="#">{{$report->student->student_name}}</a> (Cikgu)</h3>
+                      <h3 class="timeline-header"><a href="#"></a> (Cikgu)</h3>
 
                       <div class="timeline-body">
-                        {{$report->message}}
+                        
                       </div>
                       <div class="timeline-footer">
                       
                       </div>
                     </div>
                   </li>
-                  @endforeach
+                  
                   <!-- END timeline item -->
           
                 </ul>

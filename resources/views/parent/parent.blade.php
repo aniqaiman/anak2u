@@ -1,12 +1,13 @@
-@extends('layout.master')
+@extends('layout.masterclassroom')
 @section('style')
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 @endsection
 @section('content')
 
 <section class="content-header">
-      <h1>
-        Parents
+      <h1><b>
+        Parents Management
+        </b>
         <small>Control panel</small>
       </h1>
 
@@ -65,6 +66,9 @@
                         </div>
                       </div>
 
+                      <div>
+              <input type="hidden" name="class_id" value="{{$classrooms->class_id}}">
+            </div>
                   </div>
             </div>
           <div class="modal-footer">

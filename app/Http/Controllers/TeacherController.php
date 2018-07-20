@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
+use Redirect;
+use Session;
 use App\Teacher;
+use App\Classroom;
 
 class TeacherController extends Controller
 {
@@ -15,8 +22,10 @@ class TeacherController extends Controller
         }
     }
 
-    public function getTeacher(){
-        $teachers = Teacher::all();
-        return view('teacher.teacher', compact('teachers'));
+    public function getTeacher($class_id, Request $request)
+    {
+        $classrooms = Classroom::where('class_id', $class_id)->first();
+        $teachers = Teacher::where('class_id', $class_id)->get();
+        return view('teacher.teacher', compact('teachers','classrooms'));
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Redirect;
 use Session;
+use App\Institute;
 use App\ClassRoom;
 use App\ClassReport;
 use App\Event;
@@ -32,15 +33,17 @@ class ClassroomController extends Controller
     		$classrooms = new ClassRoom;
     		$classrooms->class_name=$request->class_name;
             $classrooms->teacher_id = $request->teacher_id;
+            $classrooms->institute_id = $request->institute_id;
     		$classrooms->save();
     		return response($classrooms);
     	}
     }
 
-    public function getClassroom()
+    public function getClassroom(Request $request, $institute_id)
     {
-    	$classrooms = ClassRoom::all();
-    	return view('classroom.classroom', compact('classrooms'));
+    	$institutes = Institute::where('institute_id', $institute_id)->first();
+    	$classrooms = ClassRoom::where('institute_id', $institute_id)->get();
+    	return view('classroom.classroom', compact('classrooms','institutes'));
     }
 
 

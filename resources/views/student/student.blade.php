@@ -72,19 +72,21 @@
                         </div>
                       </div>
 
-                      <div class="form-group">
-                        <label for="parents_id" class="col-sm-3 control-label">Parent's Name: </label>
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" name="parents_id" id="parents_id">
-                        </div>
-                      </div>  
 
-                      <div class="form-group">
-                        <label for="class_id" class="col-sm-3 control-label">Classroom Name: </label>
-                        <div class="col-sm-9">
-                          <input type="text" class="form-control" name="class_id" id="class_id">
-                        </div>
-                      </div>
+               <div class="form-group">
+             <label for="parents_id" class="col-sm-3 control-label">Father Name: </label>
+             <div class="col-sm-9">
+               <select class="form-control" name="parents_id" id="parents_id" data-placeholder="Select">
+                 @foreach($parents as $parent)
+                 <option value="{{$parent->parents_id}}">{{$parent->father_name}}</option>
+                 @endforeach
+               </select>
+             </div>
+           </div>
+
+
+
+            
 
                       <div class="form-group">
                         <label for="mykid_number" class="col-sm-3 control-label">MyKid Number: </label>
@@ -125,6 +127,13 @@
                         <label for="blood_type" class="col-sm-3 control-label">Blood Type: </label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" name="blood_type" id="blood_type">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="image_url" class="col-sm-3 control-label">Student Image: </label>
+                        <div class="col-sm-9">
+                          <input type="file" class="form-control" name="image_url" id="image_url">
                         </div>
                       </div>
 
@@ -170,7 +179,6 @@
                             <th class="mailbox-subject"><center>Ambition</center></th>
                             <th class="mailbox-subject"><center>Parents</center></th>
                             <th class="mailbox-subject"><center>MyKid Number</center></th>
-                            <th class="mailbox-subject"><center>Class</center></th>
                           </tr>
                           </thead>
 
@@ -185,7 +193,6 @@
                             <td class="mailbox-subject"><center>{{$student->ambition}}</center></td>
                             <td class="mailbox-subject"><center>{{$student->parents->father_name}}</center></td>
                             <td class="mailbox-subject"><center>{{$student->mykid_number}}</center></td>
-                            <td class="mailbox-subject"><center>{{$student->class_id}}</center></td>
                          </tr>
                          @endforeach
                          

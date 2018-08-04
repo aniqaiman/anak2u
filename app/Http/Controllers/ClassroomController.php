@@ -14,6 +14,7 @@ use App\ClassRoom;
 use App\ClassReport;
 use App\Event;
 use App\Student;
+use App\Teacher;
 
 class ClassroomController extends Controller
 {
@@ -43,7 +44,8 @@ class ClassroomController extends Controller
     {
     	$institutes = Institute::where('institute_id', $institute_id)->first();
     	$classrooms = ClassRoom::where('institute_id', $institute_id)->get();
-    	return view('classroom.classroom', compact('classrooms','institutes'));
+    	$teachers = Teacher::where('institute_id', $institute_id)->get();
+    	return view('classroom.classroom', compact('classrooms','institutes','teachers'));
     }
 
 

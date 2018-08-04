@@ -20,4 +20,9 @@ class Institute extends Model
     {
     	return $this->hasMany('App\Classroom','institute_id');
     }
+
+    public function teachers()
+    {
+        return $this->hasMany('App\Teacher','institute_id');
+    }
 }

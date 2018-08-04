@@ -30,19 +30,28 @@
           {!! csrf_field() !!}
           <div class="row">
 
-            <div class="form-group">
+          
+
+
+              <div class="form-group">
               <label for="class_name" class="col-sm-3 control-label">Class Name: </label>
               <div class="col-sm-9">
                 <input type="text" class="form-control" name="class_name" id="class_name">
               </div>
-            </div>  
+            </div>   
 
-            <div class="form-group">
-              <label for="teacher_id" class="col-sm-3 control-label">Teacher's Name: </label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" name="teacher_id" id="teacher_id">
-              </div>
-            </div>                      
+      <div class="form-group">
+             <label for="teacher_id" class="col-sm-3 control-label">Teacher's Name: </label>
+             <div class="col-sm-9">
+               <select class="form-control" name="teacher_id" id="teacher_id" data-placeholder="Select">
+                 @foreach($teachers as $teacher)
+                 <option value="{{$teacher->teacher_id}}">{{$teacher->teacher_name}}</option>
+                 @endforeach
+               </select>
+             </div>
+           </div>
+
+                            
 
             <div>
               <input type="hidden" name="institute_id" value="{{$institutes->institute_id}}">
@@ -79,7 +88,6 @@
                     <thead>
 
                       <tr class="info">
-                        <th><input type="checkbox"></th>
                         <th class="mailbox-subject"><center>Classroom Id</center></th>
                         <th class="mailbox-subject"><center>Classroom Name</center></th>
                         <th class="mailbox-subject"><center>Teacher Name</center></th>
@@ -89,7 +97,6 @@
                     <tbody>
                       @foreach($classrooms as $classroom)
                       <tr class="info">
-                        <td><input type="checkbox"></td>
                         <td class="mailbox-subject"><center>{{$classroom->class_id}}</center></td>
                         <td class="mailbox-subject"><center><a href="{{route('classroomdashboard',['class_id' => $classroom->class_id])}}">{{$classroom->class_name}}</a></center></td>
                         <td class="mailbox-subject"><center>{{$classroom->teachers->teacher_name}}</center></td>

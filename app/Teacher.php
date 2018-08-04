@@ -13,10 +13,16 @@ class Teacher extends Model
         'teacher_name',
         'phone_number',
         'email',
-        'address'
+        'address',
+        'institute_id'
     ];
 
     public function class(){
         return $this->hasMany('App\ClassRoom', 'teacher_id');
+    }
+
+    public function institute()
+    {
+        return $this->belongsTo('App\Institute','institute_id');
     }
 }

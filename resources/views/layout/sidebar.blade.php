@@ -39,6 +39,7 @@
           </a>
         </li>
 
+
         <li class="treeview">
           <a href="{{route('institute')}}">
             <i class="fa fa-building"></i>

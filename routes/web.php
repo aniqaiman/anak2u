@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('layout.master');
+});
+
 Route::get('/student/{student_id}/studentdashboard', ['as' => 'studentdashboard','uses' =>'StudentController@studentDashboard']);
 Route::get('/classroomdashboard', ['as'=>'dashboard', 'uses'=>'ClassroomController@getDashboard']);
 Route::get('/institutes/{institute_id}/institutedashboard', ['as'=>'institutedashboard', 'uses'=>'DashboardController@getDashboard']);

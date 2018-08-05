@@ -30,3 +30,5 @@ Route::get('/class/{class_id}/reports', 'Api\ClassController@getClassReport');
 Route::post('/class/{class_id}/report', 'Api\ClassController@postClassReport');
 
 Route::post('/login', 'Api\LoginController@login');
+
+Route::post('/event', 'Api\EventController@create');

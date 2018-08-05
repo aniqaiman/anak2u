@@ -14,6 +14,7 @@ class Event extends Model
         'organiser',
         'start_date',
         'end_date',
-        'teacher_id'
+        'teacher_id',
+        'class_id'
     ];
 }

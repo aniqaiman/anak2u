@@ -32,3 +32,4 @@ Route::post('/class/{class_id}/report', 'Api\ClassController@postClassReport');
 Route::post('/login', 'Api\LoginController@login');
 
 Route::post('/event', 'Api\EventController@create');
+Route::post('/favourite', 'Api\FavouriteController@create');

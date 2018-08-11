@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Institute extends Model
 {
+    protected $guard = 'web';
     protected $table = 'institutes';
     protected $primaryKey = 'institute_id';
     public $timeStamps = 'true';

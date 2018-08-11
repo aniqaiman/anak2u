@@ -11,9 +11,16 @@ use Redirect;
 use Session;
 use App\Institute;
 use Form;
+use Auth;
 
 class InstituteController extends Controller
 {
+
+	public function __construct()
+	{
+		$this->middleware('auth:web');
+	}
+
     public function createInstitute(Request $request)
     {
     	$path = $request->file('institute_image')->store('public/images');

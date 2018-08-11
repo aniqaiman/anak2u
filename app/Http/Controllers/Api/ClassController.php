@@ -11,6 +11,7 @@ use App\ClassRoom;
 use App\ClassReport;
 use Storage;
 use Image;
+use Carbon\Carbon;
 
 class ClassController extends BaseController
 {
@@ -29,31 +30,18 @@ class ClassController extends BaseController
         return response()->json(['data'=>$reports, 'status'=>'ok']);
     }
 
-
-    // public function postClassReport(Request $request, $class_id){
-    //     $path = $request->file('report_picture')->store('report/pic');
-    //     if($request->ajax()){
-    //         $report = new ClassReport;
-    //         $report->report_picture = $path;
-    //         $report->message = $request->message;
-    //         $report->class_id = $request->class_id;
-    //         $report->save();
-    //         return response($report);
-    //     }   
-    // }
-
     public function postClassReport(Request $request, $class_id){
 
-        $filename = 'image_'.$request['message'].'_'.$class_id.'.jpg';
+        $filename = 'image-'.$request['message'].'-'.$class_id.'-'.Carbon::now().'.jpg';
         $reportImagePath = 'report-image/' .$class_id.'/' . $filename;
         $image = Image::make($request['photo'])->orientate()->fit(500);
         $image = $image->stream();
-        Storage::disk('public')->put($reportImagePath, $image->__toString());
+        Storage::disk('s3')->put($reportImagePath, $image->__toString());
 
         $classreport = ClassReport::create([
             'message' => $request['message'],
             'class_id' => $class_id,
-            'report_picture' => $reportImagePath,
+            'report_picture' =>env('APP_PHOTO_URL').$reportImagePath,
         ]);
         return response()->json(['data'=>$classreport, 'status'=>'ok']);
     }

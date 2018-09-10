@@ -14,7 +14,7 @@ Route::get('/', function () {
 });
 
 Route::get('/student/{student_id}/studentdashboard', ['as' => 'studentdashboard','uses' =>'StudentController@studentDashboard']);
-Route::get('/classroomdashboard', ['as'=>'dashboard', 'uses'=>'ClassroomController@getDashboard']);
+Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'ClassroomController@getDashboard']);
 Route::get('/institutes/{institute_id}/institutedashboard', ['as'=>'institutedashboard', 'uses'=>'DashboardController@getDashboard']);
 
 // --------------------Institute------------------------------------------------	

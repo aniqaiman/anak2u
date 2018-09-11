@@ -32,7 +32,7 @@ class TeacherController extends Controller
 
     public function getTeacher($class_id, Request $request)
     {
-        $classrooms = Classroom::where('class_id', $class_id)->first();
+        $classrooms = ClassRoom::where('class_id', $class_id)->first();
         $teachers = Teacher::where('class_id', $classrooms->class_id)->get();
         return view('teacher.teacher', compact('teachers','classrooms'));
     }

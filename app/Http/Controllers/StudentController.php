@@ -51,7 +51,7 @@ class StudentController extends Controller
 
     public function getStudent($class_id, Request $request)
     {
-        $classrooms = Classroom::where('class_id', $class_id)->first();
+        $classrooms = ClassRoom::where('class_id', $class_id)->first();
         $students = Student::where('class_id', $class_id)->get();
         $parents = Parents::where('class_id', $class_id)->get();
         return view('student.student', compact('students','classrooms','parents'));

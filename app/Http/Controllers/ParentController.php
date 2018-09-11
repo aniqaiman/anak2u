@@ -31,7 +31,7 @@ class ParentController extends Controller
 
     public function getParent($class_id, Request $request)
     {
-        $classrooms = Classroom::where('class_id', $class_id)->first();
+        $classrooms = ClassRoom::where('class_id', $class_id)->first();
         $parents = Parents::where('class_id', $class_id)->get();
     	return view('parent.parent', compact('classrooms','parents'));
     }

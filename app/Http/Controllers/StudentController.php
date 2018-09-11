@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Redirect;
 use Session;
-use App\Classroom;
+use App\ClassRoom;
 use App\Student;
 use App\StudentReport;
 use App\Parents;

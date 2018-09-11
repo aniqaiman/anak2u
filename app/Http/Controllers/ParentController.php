@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use Session;
 use App\Parents;
-use App\Classroom;
+use App\ClassRoom;
 
 class ParentController extends Controller
 {

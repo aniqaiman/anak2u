@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use Session;
 use App\Event;
-use App\Classroom;
+use App\ClassRoom;
 
 class EventController extends Controller
 {
@@ -31,7 +31,7 @@ class EventController extends Controller
 
     public function getEvent($class_id, Request $request)
     {
-        $classrooms = Classroom::where('class_id', $class_id)->first();
+        $classrooms = ClassRoom::where('class_id', $class_id)->first();
     	$events = Event::where('class_id', $class_id)->get();
     	return view('event.event', compact('events','classrooms'));
     }

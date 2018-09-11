@@ -12,7 +12,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-
+<style>.tableimage
+{
+  width: 25%;
+  height: 25%;
+}
+</style>
   {!!Html::style('css/bootstrap.min.css')!!}
   <!-- Font Awesome -->
   {!!Html::style('css/font-awesome.min.css')!!}

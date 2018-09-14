@@ -18,6 +18,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   height: 25%;
 }
 </style>
+
+<style>.gridimage
+{
+  width: 25%;
+  height: 25%;
+  border: groove;
+}
+</style>
   {!!Html::style('css/bootstrap.min.css')!!}
   <!-- Font Awesome -->
   {!!Html::style('css/font-awesome.min.css')!!}

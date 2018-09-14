@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Redirect;
 use Session;
 use App\Institute;
+use App\ClassRoom;
+use App\Student;
 
 class DashboardController extends Controller
 {
@@ -17,5 +19,12 @@ class DashboardController extends Controller
     {
         $institutes = Institute::where('institute_id', $institute_id)->first();
         return view('institute.instituteDashboard', compact('institutes'));
+    }
+
+    public function getClassroomDashboard($class_id, Request $request)
+    {
+    	$classrooms = ClassRoom::find($class_id);
+    	$students = Student::where('class_id', $class_id)->get();
+    	return view('classroom.classroomDashboard', compact('classrooms','students'));
     }
 }

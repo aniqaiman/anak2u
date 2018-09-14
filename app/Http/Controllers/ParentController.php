@@ -11,6 +11,8 @@ use Redirect;
 use Session;
 use App\Parents;
 use App\ClassRoom;
+use App\Institute;
+use App\Teacher;
 
 class ParentController extends Controller
 {
@@ -18,22 +20,24 @@ class ParentController extends Controller
     {
     	if($request->ajax()){
     		$parents = new Parents;
-    		$parents->father_name=$request->father_name;
-    		$parents->mother_name=$request->mother_name;
-    		$parents->address=$request->address;
-    		$parents->phone_number=$request->phone_number;
-    		$parents->email=$request->email;
-            $parents->class_id=$request->class_id;
+    		$parents->father_name = $request->father_name;
+    		$parents->mother_name = $request->mother_name;
+    		$parents->address = $request->address;
+    		$parents->phone_number = $request->phone_number;
+    		$parents->email = $request->email;
+            $parents->institute_id = $request->institute_id;
     		$parents->save();
     		return response($parents);    	
     	}
     }
 
-    public function getParent($class_id, Request $request)
+    public function getParent($institute_id, Request $request)
     {
-        $classrooms = ClassRoom::where('class_id', $class_id)->first();
-        $parents = Parents::where('class_id', $class_id)->get();
-    	return view('parent.parent', compact('classrooms','parents'));
+        $institutes = Institute::where('institute_id', $institute_id)->first();
+        $classrooms = ClassRoom::where('institute_id', $institute_id)->get();
+        $teachers = Teacher::where('institute_id', $institute_id)->get();
+        $parents = Parents::where('institute_id', $institute_id)->get();
+    	return view('parent.parent', compact('institutes','classrooms','teachers','parents'));
     }
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;

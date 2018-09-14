@@ -34,8 +34,8 @@
         <li class="header">MAIN NAVIGATION</li>
 
         <li class="treeview">
-          <a href="{{route('dashboard')}}">
-            <i class="fa fa-tachometer"></i> <span class="text-info">Dashboard</span>
+          <a href="{{route('institutedashboard',['institute_id'=>$institutes->institute_id])}}">
+            <i class="fa fa-tachometer"></i> <span class="text-info">Institute Dashboard</span>
           </a>
         </li>  
 
@@ -58,11 +58,7 @@
           </a>
         </li>
 
-        <li class="treeview">
-          <a href="{{route('parent',['institute_id'=>$institutes->institute_id])}}">
-            <i class="fa fa-user"></i> <span class="text-info">Parent Management</span>
-          </a>
-        </li> -->
+         -->
 
         <li class="treeview">
           <a href="{{route('teachers',['institute_id'=>$institutes->institute_id])}}">
@@ -70,6 +66,12 @@
           </a>
         </li> 
         
+        <li class="treeview">
+          <a href="{{route('parents',['institute_id'=>$institutes->institute_id])}}">
+            <i class="fa fa-user"></i> <span class="text-info">Parent Management</span>
+          </a>
+        </li>
+
         </ul>
     </section>
     <!-- /.sidebar -->

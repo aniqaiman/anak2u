@@ -1,4 +1,4 @@
-@extends('layout.masterclassroom')
+@extends('layout.masterinstitute')
 @section('style')
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 @endsection
@@ -67,7 +67,7 @@
                       </div>
 
                       <div>
-              <input type="hidden" name="class_id" value="{{$classrooms->class_id}}">
+              <input type="hidden" name="institute_id" value="{{$institutes->institute_id}}">
             </div>
                   </div>
             </div>

@@ -5,12 +5,12 @@
 
 <section class="content-header">
   <h1>
-    INSTITUTE MANAGEMENT
+    TEACHER MANAGEMENT
     <small>Control Panel</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">Institute</li>
+    <li class="active">Teacher</li>
   </ol>
 </section>
 
@@ -30,46 +30,40 @@
             <!-- /.box-header -->
             <div class="modal-body">
               <!-- Custom Tabs (Pulled to the right) -->
-              <form action="#" method="POST" id="frm-institute-edit" enctype ="multipart/form-data">
+              <form action="#" method="POST" id="frm-teacher-edit" enctype ="multipart/form-data">
                 {!! csrf_field() !!}
                 <div class="form-horizontal">
 
                   <div class="form-group">
-                    <label for="institute_image" class="col-sm-3 control-label">Institute Image: </label>
+                    <label for="teacher_name" class="col-sm-3 control-label">Teacher Name: </label>
                     <div class="col-sm-9">
-                      <input type="file" class="form-control" name="institute_image" id="institute_image">
-                      <span class="help-block">Choose only if there is new picture.</span>
-                    </div>
-                    <div class="col-sm-offset-3 col-sm-9">
-                      Current image:
-                      <br/>
-                      <img src="{{ env('APP_PHOTO_URL') }}{{$institute->institute_image}}" class="gridimage" />
+                      <input type="text" class="form-control" name="teacher_name" id="teacher_name" value="{{$teacher->teacher_name}}">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="institute_name" class="col-sm-3 control-label">Institute Name: </label>
+                    <label for="address" class="col-sm-3 control-label">Address: </label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="institute_name" id="institute_name" value="{{$institute->institute_name}}">
+                      <input type="text" class="form-control" name="address" id="address" value="{{$teacher->address}}">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="institute_address" class="col-sm-3 control-label">Institute Address: </label>
+                    <label for="phone_number" class="col-sm-3 control-label">Phone Number: </label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="institute_address" id="institute_address" value="{{$institute->institute_address}}">
+                      <input type="text" class="form-control" name="phone_number" id="phone_number" value="{{$teacher->phone_number}}">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="location" class="col-sm-3 control-label">Location: </label>                      
+                    <label for="email" class="col-sm-3 control-label">Email: </label>                      
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="location" id="location" value="{{$institute->location}}">
+                      <input type="text" class="form-control" name="email" id="email" value="{{$teacher->email}}">
                     </div>
                   </div>
 
                 </div>
-                <input type="hidden" name="institute_id" value="{{$institute->institute_id}}">
+                <input type="hidden" name="teacher_id" value="{{$teacher->teacher_id}}">
                 <div class="box-footer">
                   <button type="submit" class="btn btn-primary">Save Change</button>
                 </div>
@@ -92,7 +86,7 @@
 @section('script')
 
 <script>
-  $('#frm-institute-edit').on('submit',function(e){
+  $('#frm-teacher-edit').on('submit',function(e){
     e.preventDefault();
     console.log('pressed');
     var data = $(this).serialize();
@@ -100,7 +94,7 @@
     var formData = new FormData($(this)[0]);
 
     $.ajax({
-      url:"{{route('updateInstitute')}}", 
+      url:"{{route('updateTeacher')}}", 
       type: "POST",
       data: formData,
       async: false,

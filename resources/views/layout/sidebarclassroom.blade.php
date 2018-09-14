@@ -34,7 +34,7 @@
         <li class="header">MAIN NAVIGATION</li>
 
         <li class="treeview">
-          <a href="{{route('dashboard')}}">
+          <a href="{{route('classroomdashboard',['class_id'=>$classrooms->class_id])}}">
             <i class="fa fa-tachometer"></i> <span class="text-info">Dashboard</span>
           </a>
         </li>       
@@ -50,18 +50,6 @@
             <i class="fa fa-calendar"></i> <span class="text-info">Event Management</span>
           </a>
         </li>
-
-        <li class="treeview">
-          <a href="{{route('parent',['class_id'=>$classrooms->class_id])}}">
-            <i class="fa fa-user"></i> <span class="text-info">Parent Management</span>
-          </a>
-        </li>
-
-        <li class="treeview">
-          <a href="{{route('teachers',['class_id'=>$classrooms->class_id])}}">
-            <i class="fa fa-book"></i> <span class="text-info">Teacher Management</span>
-          </a>
-        </li> 
         
         </ul>
     </section>

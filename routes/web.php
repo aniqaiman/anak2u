@@ -10,12 +10,15 @@
 |
 */
 Route::get('/', function () {   
-    return view('layout.master');
+	return view('layout.master');
 });
 
 Route::get('/student/{student_id}/studentdashboard', ['as' => 'studentdashboard','uses' =>'StudentController@studentDashboard']);
 Route::get('/dashboard', ['as'=>'dashboard', 'uses'=>'ClassroomController@getDashboard']);
 Route::get('/institutes/{institute_id}/institutedashboard', ['as'=>'institutedashboard', 'uses'=>'DashboardController@getDashboard']);
+Route::get('/classroom/{class_id}/classroomdashboard', ['as'=>'classroomdashboard','uses'=>'DashboardController@getClassroomDashboard']);
+
+// Route::get('/classroomdashboard/{class_id}',['as'=>'classroomdashboard', 'uses'=>'ClassroomController@getClassroomDashboard']);
 
 // --------------------Institute------------------------------------------------	
 
@@ -33,7 +36,9 @@ Route::get('/institute/{institute_id}/classroom',['as'=>'classroom','uses'=>'Cla
 // --------------------teacher------------------------------------------------
 
 Route::post('/teachers',['as'=>'createTeacher','uses'=>'TeacherController@createTeacher']);
-Route::get('/classroom/{class_id}/teachers', ['as'=>'teachers', 'uses'=>'TeacherController@getTeacher']);
+Route::get('/institute/{institute_id}/teachers', ['as'=>'teachers', 'uses'=>'TeacherController@getTeacher']);
+Route::get('/institute/{institute_id}/editTeacher/{teacher_id}', ['as'=>'editTeacher','uses'=>'TeacherController@editTeacher']);
+Route::post('updateTeacher',['as'=>'updateTeacher','uses'=>'TeacherController@updateTeacher']);
 
 // --------------------Student------------------------------------------------
 
@@ -42,8 +47,10 @@ Route::get('/classroom/{class_id}/students', ['as'=>'students', 'uses'=>'Student
 
 // --------------------Parents------------------------------------------------
 
-Route::post('/parent', ['as'=>'createParent', 'uses'=>'ParentController@createParent']);
-Route::get('/classroom/{class_id}/parent', ['as'=>'parent', 'uses'=>'ParentController@getParent']);
+Route::post('/parents', ['as'=>'createParent', 'uses'=>'ParentController@createParent']);
+Route::get('/institute/{institute_id}/parents', ['as'=>'parents', 'uses'=>'ParentController@getParent']);
+Route::get('/institute/{institute_id}/editParent/{parent_id}',['as'=>'editParent','uses'=>'ParentController@editParent']);
+Route::post('updateParent',['as'=>'updateParent','uses'=>'ParentController@updateParent']);
 
 // --------------------Events------------------------------------------------
 
@@ -59,7 +66,7 @@ Route::get('/studentreport', ['as'=>'studentreport','uses'=>'StudentController@g
 
 Route::post('/classroomreport',['as'=>'createClassroomReport','uses'=>'ClassroomController@createClassroomReport']);	
 Route::get('/classroomreport',['as'=>'classroomreport','uses'=>'ClassroomController@getClassroomReport']);
-Route::get('/classroomdashboard/{class_id}',['as'=>'classroomdashboard', 'uses'=>'ClassroomController@getClassroomDashboard']);
+
 
 
 
